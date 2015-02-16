@@ -1,0 +1,20 @@
+{
+    "asset": 78500000000,
+    "cancellation": "なし",
+    "category": "国内株式-インデックス・２２５",
+    "compensation": 0.005616,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0108,
+    "fund_name": "大和−ストックインデックスファンド２２５",
+    "id": "04311859",
+    "modified": 1424050972,
+    "modified_str": "2015-02-16 01:42:52",
+    "policy": "我が国の株式市場の動きと長期成長をとらえることを目標に、日経平均株価をモデルとして運用を行う。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

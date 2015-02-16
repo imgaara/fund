@@ -1,0 +1,20 @@
+{
+    "asset": 8261000000,
+    "cancellation": "なし",
+    "category": "国内ＲＥＩＴ-インデックス",
+    "compensation": 0.003618,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "ニッセイ−＜購入・換金手数料なし＞ニッセイＪリートインデックスファンド",
+    "id": "29314136",
+    "modified": 1424098611,
+    "modified_str": "2015-02-16 14:56:51",
+    "policy": "国内の金融商品取引所に上場している不動産投資信託証券に投資することにより、東証REIT指数の動きに連動する成果を目標とします。購入時および換金時の手数料は無料です。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内REIT"
+}

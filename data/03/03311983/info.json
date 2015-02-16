@@ -1,0 +1,20 @@
+{
+    "asset": 1470000000,
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.02214,
+    "course": "口数",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0324,
+    "fund_name": "三菱ＵＦＪ−メロングローバルバランス",
+    "id": "03311983",
+    "modified": 1424097997,
+    "modified_str": "2015-02-16 14:46:37",
+    "policy": "日本を含む世界各国の株式、債券及び短期金融商品に投資を行い長期的な信託財産の成長を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

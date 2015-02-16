@@ -1,0 +1,20 @@
+{
+    "asset": 57761000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・国債",
+    "compensation": 0.0135,
+    "course": "口数・金額",
+    "deadline": "13:00",
+    "distribution": "四半期",
+    "fee": 0,
+    "fund_name": "国際−グローバル・ソブリン・オープン３ヶ月決算型",
+    "id": "1131297C",
+    "modified": 1424051178,
+    "modified_str": "2015-02-16 01:46:18",
+    "policy": "世界主要先進国のソブリン債券に分散投資し、長期的に安定した収益確保と信託財産の成長を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.005,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

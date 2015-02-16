@@ -1,0 +1,20 @@
+{
+    "asset": 29794000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・ＣＢ",
+    "compensation": 0.016524,
+    "course": "口数",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "ＪＰＭ−ＪＰＭグローバル・ＣＢ・オープン’９５",
+    "id": "17311951",
+    "modified": 1424097474,
+    "modified_str": "2015-02-16 14:37:54",
+    "policy": "世界各国のCBに分散投資することにより安定した収益の確保および信託財産の着実な成長を目指します。",
+    "refund_date": "2020\/01\/30",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から2営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

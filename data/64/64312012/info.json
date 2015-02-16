@@ -1,0 +1,20 @@
+{
+    "asset": 7878000000,
+    "cancellation": "なし",
+    "category": "海外債券-インデックス",
+    "compensation": 0.00756,
+    "course": "金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "三井住友ＴＡＭ−外国債券インデックスファンド",
+    "id": "64312012",
+    "modified": 1424097922,
+    "modified_str": "2015-02-16 14:45:22",
+    "policy": "シティグループ世界国債インデックスに連動する投資成果を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.001,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

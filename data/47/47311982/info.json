@@ -1,0 +1,20 @@
+{
+    "asset": 10646000000,
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・大型・一般",
+    "compensation": 0.011664,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "ＤＩＡＭ−ハイブリッド・セレクション",
+    "id": "47311982",
+    "modified": 1424051049,
+    "modified_str": "2015-02-16 01:44:09",
+    "policy": "グロース株及びバリュー株に投資することにより、様々な相場局面で、利回り収入にも配慮しつつ、キャピタルゲインの獲得を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

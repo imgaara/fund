@@ -1,0 +1,20 @@
+{
+    "asset": 6055000000,
+    "cancellation": "なし",
+    "category": "新興国株式-アクティブ・アジア・中国",
+    "compensation": 0.01728,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "ＤＩＡＭ−中国関連株オープン（チャイニーズ・エンジェル）",
+    "id": "4731103A",
+    "modified": 1424096343,
+    "modified_str": "2015-02-16 14:19:03",
+    "policy": "中国株及び中国関連株へ投資し、信託財産の長期的な成長を目指します。原則、対円での為替ヘッジは行いません。",
+    "refund_date": "2018\/10\/30",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "新興国株式"
+}

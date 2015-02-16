@@ -1,0 +1,20 @@
+{
+    "asset": "827百万円",
+    "cancellation": "なし",
+    "category": "海外株式-アクティブ・一般",
+    "compensation": 0.01944,
+    "course": "金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "日興−年金積立インターナショナル・グロース・ファンド（愛称：ＤＣ　Ｉ　グロース）",
+    "id": "0231J01A",
+    "modified": 1424096405,
+    "modified_str": "2015-02-16 14:20:05",
+    "policy": "「ベスト・バランス／海外株式マザーファンド」を主要投資対象とします。MSCI-KOKUSAI インデックス（円ヘッジなし・円ベース）の動きを上回る投資成果をめざします。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外株式"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 3349000000,
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.015444,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "ドイチェ−ライフ・プラン５０",
+    "id": "3431598B",
+    "modified": 1424050478,
+    "modified_str": "2015-02-16 01:34:38",
+    "policy": "国内債券・国内株式・外国債券・外国株式への分散投資により、リスクを低減しつつ中長期的な安定収益の獲得を目指します",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 1301000000,
+    "cancellation": "なし",
+    "category": "コモディティ-市況・インデックス",
+    "compensation": 0.01296,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0108,
+    "fund_name": "パインブリッジ−パインブリッジ・コモディティファンド（愛称：ネイチャーメイド）",
+    "id": "40311062",
+    "modified": 1424096048,
+    "modified_str": "2015-02-16 14:14:08",
+    "policy": "世界の商品市況全体を表す、Dow Jones-UBS Commodity IndexSM（以下「DJ-UBSコモディテイ・インデックス」といいます。）に中長期的な動きが反映される運用成果を目指します。原則として為替ヘッジは行いません。原則として、毎月分配を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "商品ファンド（コモディティ）"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 7782000000,
+    "cancellation": "なし",
+    "category": "新興国株式-アクティブ",
+    "compensation": 0.01992,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0216,
+    "fund_name": "ピクテ−ピクテ新興国インカム株式ファンド(１年決算型)",
+    "id": "4231113A",
+    "modified": 1424096612,
+    "modified_str": "2015-02-16 14:23:32",
+    "policy": "主に新興国の高配当利回りの株式に投資します。特定の銘柄、国や通貨に集中せず、分散投資します。年１回決算を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から5営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "新興国株式"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 11771000000,
+    "cancellation": "なし",
+    "category": "国内ＲＥＩＴ-インデックス",
+    "compensation": 0.00432,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "三菱ＵＦＪ−ｅＭＡＸＩＳ国内リートインデックス",
+    "id": "0331409A",
+    "modified": 1424096246,
+    "modified_str": "2015-02-16 14:17:26",
+    "policy": "東証REIT指数(配当込み)と連動する投資成果をめざして運用を行ないます。年1回決算を行ないます。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内REIT"
+}

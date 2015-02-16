@@ -1,0 +1,20 @@
+{
+    "asset": "254百万円",
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・国債",
+    "compensation": 0.00972,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0,
+    "fund_name": "ＤＩＡＭ−ＤＩＡＭワールド債券オープン（愛称：ハピクロマイルド）",
+    "id": "47311086",
+    "modified": 1424097219,
+    "modified_str": "2015-02-16 14:33:39",
+    "policy": "比較的高金利の期待できる資源国の公社債および日本国債に投資します。投資対象国を分散することでリスク抑制効果が期待されます。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.001,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

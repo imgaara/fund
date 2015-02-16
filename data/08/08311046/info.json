@@ -1,0 +1,20 @@
+{
+    "asset": 67974000000,
+    "cancellation": "なし",
+    "category": "国内債券-アクティブ・物価連動債",
+    "compensation": 0.00648,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "ＭＨＡＭ−物価連動国債ファンド（愛称：未来予想）",
+    "id": "08311046",
+    "modified": 1424098843,
+    "modified_str": "2015-02-16 15:00:43",
+    "policy": "わが国の物価連動国債を主要投資対象とし、長期的に物価の動きに追随する投資成果を目指して運用を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.001,
+    "settlement_schedule": "約定日から5営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内債券"
+}

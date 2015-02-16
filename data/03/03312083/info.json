@@ -1,0 +1,20 @@
+{
+    "asset": 3493000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・国債",
+    "compensation": 0.01296,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0216,
+    "fund_name": "三菱ＵＦＪ−グローバル・ボンド・ベーシック（毎月決算型）",
+    "id": "03312083",
+    "modified": 1424097215,
+    "modified_str": "2015-02-16 14:33:35",
+    "policy": "日本を除く世界の国債等を実質的な主要投資対象とし、幅広く分散投資を行います。毎月決算を行ない、分配を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 3205000000,
+    "cancellation": "なし",
+    "category": "国内株式-インデックス",
+    "compensation": 0.00864,
+    "course": "口数・金額",
+    "deadline": "13:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "新光−コア３０インデックス",
+    "id": "0631198B",
+    "modified": 1424097300,
+    "modified_str": "2015-02-16 14:35:00",
+    "policy": "ＴＯＰＩＸコア30株価指数に連動する投資成果を目指す，組み入れ比率が高位を保つので，基準価格は，大きく変動する。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.005,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

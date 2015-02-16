@@ -1,0 +1,20 @@
+{
+    "asset": "53百万円",
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.0162,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0216,
+    "fund_name": "ＩＮＧ−グローバル・バランス・オープン分散投資型（バーク）",
+    "id": "72312002",
+    "modified": 1424098147,
+    "modified_str": "2015-02-16 14:49:07",
+    "policy": "長期的に信託財産の着実な成長と収益の獲得を目指して運用を行う。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

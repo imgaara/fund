@@ -1,0 +1,20 @@
+{
+    "asset": 3364000000,
+    "cancellation": "なし",
+    "category": "新興国株式-アクティブ・アジア・中国",
+    "compensation": 0.02052,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0324,
+    "fund_name": "ＤＩＡＭ−ＤＩＡＭ中国Ａ株ファンド",
+    "id": "4731110C",
+    "modified": 1424096365,
+    "modified_str": "2015-02-16 14:19:25",
+    "policy": "中国経済の発展に伴い、今後の成長が期待される中国企業の株式に実質的に投資を行うことで、信託財産の成長をめざします。中国企業の株式への投資にあたっては、中国A株を中心に組み入れることを基本とします。マザーファンドの運用にあたっては、DIAM Asset Management（HK）Limitedの投資助言を活用します。",
+    "refund_date": "2020\/12\/16",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "新興国株式"
+}

@@ -1,0 +1,20 @@
+{
+    "asset": 3401000000,
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・大型・ＳＲＩ",
+    "compensation": 0.019224,
+    "course": "金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "朝日−朝日ライフＳＲＩ社会貢献ファンド（愛称：あすのはね）",
+    "id": "68311009",
+    "modified": 1424051939,
+    "modified_str": "2015-02-16 01:58:59",
+    "policy": "株式への投資によって、信託財産の長期的成長を目指しています。事業を通じて、社会的課題に積極的に取り組んでいる企業を投資対象とします。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

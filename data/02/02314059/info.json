@@ -1,0 +1,20 @@
+{
+    "asset": 51388000000,
+    "cancellation": "なし",
+    "category": "バランス-海外・インデックス",
+    "compensation": 0.01026,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0216,
+    "fund_name": "日興−世界の財産３分法ファンド（不動産・債券・株式）毎月分配型",
+    "id": "02314059",
+    "modified": 1424096478,
+    "modified_str": "2015-02-16 14:21:18",
+    "policy": "当ファンドは世界の不動産、債券、株式に分散投資を行い、資産の安定成長と毎月分配の両方を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.002,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

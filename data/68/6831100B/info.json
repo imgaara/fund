@@ -1,0 +1,20 @@
+{
+    "asset": 2035000000,
+    "cancellation": "なし",
+    "category": "国内株式-インデックス・２２５",
+    "compensation": 0.0054,
+    "course": "金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "朝日−日経平均ファンド（愛称：にぃにぃＧｏ）",
+    "id": "6831100B",
+    "modified": 1424050744,
+    "modified_str": "2015-02-16 01:39:04",
+    "policy": "日経平均株価の動きに連動する投資成果を目指します。株価指数先物取引等を活用することがあります。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

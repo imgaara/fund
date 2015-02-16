@@ -1,0 +1,20 @@
+{
+    "asset": 20052000000,
+    "cancellation": "なし",
+    "category": "国内ＲＥＩＴ-インデックス",
+    "compensation": 0.007776,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "四半期",
+    "fee": 0.0108,
+    "fund_name": "大和−Ｊ−ＲＥＩＴオープン",
+    "id": "0431103B",
+    "modified": 1424097097,
+    "modified_str": "2015-02-16 14:31:37",
+    "policy": "東京証券取引所上場の不動産投信全銘柄を対象とする時価総額加重平均の指数「東証ＲＥＩＴ指数」に連動する運用成果を目指す、年4回決算型の商品です。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内REIT"
+}

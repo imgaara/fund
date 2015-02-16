@@ -1,0 +1,20 @@
+{
+    "asset": "473百万円",
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・その他",
+    "compensation": 0.0108,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "四半期",
+    "fee": 0,
+    "fund_name": "ＤＩＡＭ−ユーロ・ボンド・ポート",
+    "id": "47312989",
+    "modified": 1424096096,
+    "modified_str": "2015-02-16 14:14:56",
+    "policy": "主にユーロ建債券、および英ポンド建債券に投資し、インカム・ゲインの確保及びキャピタルゲインの獲得により信託財産の成長をはかることを目的として運用を行います",
+    "refund_date": "無期限",
+    "reservation_fee": 0.002,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

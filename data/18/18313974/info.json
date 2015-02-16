@@ -1,0 +1,20 @@
+{
+    "asset": 1287000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・ハイイールド",
+    "compensation": 0.01404,
+    "course": "口数",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "インベスコ−インカムセレクトファンド",
+    "id": "18313974",
+    "modified": 1424050920,
+    "modified_str": "2015-02-16 01:42:00",
+    "policy": "主に米国国債、地方債、投資適格事業債、ハイイールド事業債に投資し、インカム収入と値上がり益の獲得を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から2営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

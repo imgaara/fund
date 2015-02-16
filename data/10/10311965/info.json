@@ -1,0 +1,20 @@
+{
+    "asset": 3858000000,
+    "cancellation": "なし",
+    "category": "国内債券-アクティブ・その他",
+    "compensation": 0.005724,
+    "course": "口数・金額",
+    "deadline": "11:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "Ｔ＆Ｄ−日本債券ベア",
+    "id": "10311965",
+    "modified": 1424098232,
+    "modified_str": "2015-02-16 14:50:32",
+    "policy": "我が国の短期公社債を主要投資対象とするとともに、我が国の国債証券先物取引の売建額が、原則として信託財産の純資産総額の5倍程度になるように調整を行う。",
+    "refund_date": "2016\/03\/15",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内債券"
+}

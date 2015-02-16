@@ -1,0 +1,20 @@
+{
+    "asset": 21603000000,
+    "cancellation": "なし",
+    "category": "国内ＲＥＩＴ-アクティブ",
+    "compensation": 0.01026,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0324,
+    "fund_name": "岡三−日本Ｊリートオープン（毎月分配型）",
+    "id": "0931104C",
+    "modified": 1424097572,
+    "modified_str": "2015-02-16 14:39:32",
+    "policy": "わが国の不動産投資信託証券を実質的な主要投資対象とします。毎月20日（休業日の場合は翌営業日）に決算を行い、収益分配を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.001,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内REIT"
+}

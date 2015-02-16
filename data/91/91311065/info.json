@@ -1,0 +1,20 @@
+{
+    "asset": "52百万円",
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・アロケーション",
+    "compensation": 0.0108,
+    "course": "口数",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "ばんせい−中小型バリュー",
+    "id": "91311065",
+    "modified": 1424096081,
+    "modified_str": "2015-02-16 14:14:41",
+    "policy": "銘柄の選別、投資タイミングを考慮して運用し、中長期のみならず、1年毎の絶対リターンの獲得を目指して積極運用を行います。",
+    "refund_date": "2016\/05\/14",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

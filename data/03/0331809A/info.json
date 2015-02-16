@@ -1,0 +1,20 @@
+{
+    "asset": 24476000000,
+    "cancellation": "なし",
+    "category": "新興国株式-インデックス",
+    "compensation": 0.00648,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "三菱ＵＦＪ−ｅＭＡＸＩＳ新興国株式インデックス",
+    "id": "0331809A",
+    "modified": 1424096026,
+    "modified_str": "2015-02-16 14:13:46",
+    "policy": "MSCIエマージング･マーケット･インデックス(円換算ベース)と連動する投資成果をめざして運用を行ないます。原則として､為替ヘッジは行ないません。年1回決算を行ないます。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "新興国株式"
+}

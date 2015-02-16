@@ -1,0 +1,20 @@
+{
+    "asset": 645182000000,
+    "cancellation": "なし",
+    "category": "海外ＲＥＩＴ-アクティブ・世界",
+    "compensation": 0.01674,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0,
+    "fund_name": "国際−ワールド・リート・オープン（毎月決算型）",
+    "id": "11311047",
+    "modified": 1424051374,
+    "modified_str": "2015-02-16 01:49:34",
+    "policy": "主として、世界各国の金融商品取引所に上場している不動産投資信託（リート＝REIT）に投資を行います。原則として、為替ヘッジは行いません。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外REIT"
+}

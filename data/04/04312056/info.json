@@ -1,0 +1,20 @@
+{
+    "asset": 166328000000,
+    "cancellation": "なし",
+    "category": "海外ＲＥＩＴ-アクティブ・世界",
+    "compensation": 0.015984,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0162,
+    "fund_name": "大和−グローバル・ＲＥＩＴオープン（毎月分配型）（愛称：世界の街並み）",
+    "id": "04312056",
+    "modified": 1424095898,
+    "modified_str": "2015-02-16 14:11:38",
+    "policy": "世界の不動産投資信託証券・REITに投資し、安定的な配当利回りの確保と信託財産の中長期的な成長をめざして分散投資を行う、毎月分配型ファンドです。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外REIT"
+}

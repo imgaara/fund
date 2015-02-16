@@ -1,0 +1,20 @@
+{
+    "asset": "98百万円",
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.00918,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0.0054,
+    "fund_name": "ＩＮＧ−グローバル・インカム・オープン（クリッパー）",
+    "id": "72315002",
+    "modified": 1424096771,
+    "modified_str": "2015-02-16 14:26:11",
+    "policy": "主としてＩＮＧ海外債券マザーファンド、ＩＮＧ日本債券マザーファンド，ＩＮＧ短期債券ファンドに投資する。ファミリーファンド方式",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

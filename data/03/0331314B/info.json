@@ -1,0 +1,20 @@
+{
+    "asset": "915百万円",
+    "cancellation": "なし",
+    "category": "国内債券-インデックス",
+    "compensation": 0.00432,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "三菱ＵＦＪ−ｅＭＡＸＩＳ国内物価連動国債インデックス",
+    "id": "0331314B",
+    "modified": 1424097095,
+    "modified_str": "2015-02-16 14:31:35",
+    "policy": "NOMURA 物価連動国債インデックス（フロアあり）に連動する投資成果をめざして運用を行います。「国内物価連動国債インデックスマザーファンド」を通じて、わが国の物価連動国債に実質的な投資を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内債券"
+}

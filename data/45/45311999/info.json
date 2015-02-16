@@ -1,0 +1,20 @@
+{
+    "asset": 21974000000,
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・大型・環境",
+    "compensation": 0.0162,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "損保Ｊ日本興亜−グリーン・オープン（ぶなの森）",
+    "id": "45311999",
+    "modified": 1424097582,
+    "modified_str": "2015-02-16 14:39:42",
+    "policy": "環境問題への取組と投資価値で分析し、評価の高い株式に投資します。中長期的にTOPIXを上回る運用を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

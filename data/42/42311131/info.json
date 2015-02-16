@@ -1,0 +1,20 @@
+{
+    "asset": 5221000000,
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.021384,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0.0108,
+    "fund_name": "ピクテ−ピクテ・アセット・アロケーション・ファンド(１年決算型)",
+    "id": "42311131",
+    "modified": 1424051760,
+    "modified_str": "2015-02-16 01:56:00",
+    "policy": "主に世界の株式、債券、金などに分散投資します。市場環境に応じて資産配分を機動的に変更します。年1回決算を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から5営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

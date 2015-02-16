@@ -1,0 +1,20 @@
+{
+    "asset": 88032000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・国債",
+    "compensation": 0.0108,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.0162,
+    "fund_name": "明治安田−パン・パシフィック外国債券オープン",
+    "id": "12311038",
+    "modified": 1424097367,
+    "modified_str": "2015-02-16 14:36:07",
+    "policy": "環太平洋先進諸国の国債、州債、政府保証債、政府機関債および国際機関債を主要投資対象とします。毎月決算を行い、原則として収益分配を実施します。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

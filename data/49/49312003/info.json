@@ -1,0 +1,20 @@
+{
+    "asset": "610百万円",
+    "cancellation": "なし",
+    "category": "国内株式-インデックス・ＴＯＰＩＸ",
+    "compensation": 0.00648,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "東京海上−東京海上日本株ＴＯＰＩＸファンド",
+    "id": "49312003",
+    "modified": 1424095710,
+    "modified_str": "2015-02-16 14:08:30",
+    "policy": "TOPIX（東証株価指数）に連動する投資成果の達成を目標とするインデックスファンドです。東証一部上場銘柄を中心に、TOPIXとの連動性を考慮し組入れを行います。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

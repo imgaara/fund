@@ -1,0 +1,20 @@
+{
+    "asset": 6799000000,
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・大型・一般",
+    "compensation": 0.01728,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0.0108,
+    "fund_name": "ＤＩＡＭ−ＩＢＪＩＴＭジャパンセレクション",
+    "id": "47311989",
+    "modified": 1424096791,
+    "modified_str": "2015-02-16 14:26:31",
+    "policy": "国内の全上場・店頭登録銘柄を投資対象とします",
+    "refund_date": "無期限",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

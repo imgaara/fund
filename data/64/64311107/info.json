@@ -1,0 +1,20 @@
+{
+    "asset": 2186000000,
+    "cancellation": "なし",
+    "category": "国内株式-インデックス・２２５",
+    "compensation": 0.003996,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "三井住友ＴＡＭ−ＳＭＴ日経２２５インデックス・オープン",
+    "id": "64311107",
+    "modified": 1424050771,
+    "modified_str": "2015-02-16 01:39:31",
+    "policy": "主として、「日経225 インデックスマザーファンド（S）」の受益証券への投資を通じて、日経平均株価と連動する投資成果を目標として運用を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

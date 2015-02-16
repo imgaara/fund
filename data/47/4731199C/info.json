@@ -1,0 +1,20 @@
+{
+    "asset": 29704000000,
+    "cancellation": "なし",
+    "category": "国内債券-アクティブ",
+    "compensation": 0.00324,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "ＤＩＡＭ−ＤＬＩＢＪ公社債オープン短期コース",
+    "id": "4731199C",
+    "modified": 1424051576,
+    "modified_str": "2015-02-16 01:52:56",
+    "policy": "デュレーションの短い信用力ある国内公社債中心に投資し、中長期的にリスクの軽減と安定した収益の獲得を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.0005,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内債券"
+}

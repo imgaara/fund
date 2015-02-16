@@ -1,0 +1,20 @@
+{
+    "asset": 1976000000,
+    "cancellation": "なし",
+    "category": "新興国株式-アクティブ・一般",
+    "compensation": 0.020196,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "国際−エマージング株式オープン",
+    "id": "1131107C",
+    "modified": 1424095633,
+    "modified_str": "2015-02-16 14:07:13",
+    "policy": "ファミリーファンド方式により、主として新興国の株式等に投資を行い、信託財産の成長を目指します。MSCIエマージング・インデックス（円換算）をベンチマークとします。",
+    "refund_date": "2027\/12\/13",
+    "reservation_fee": 0.003,
+    "settlement_schedule": "約定日から5営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "新興国株式"
+}

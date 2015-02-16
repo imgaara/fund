@@ -1,0 +1,20 @@
+{
+    "asset": 2806000000,
+    "cancellation": "なし",
+    "category": "海外株式-インデックス",
+    "compensation": 0.00864,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年1回",
+    "fee": 0,
+    "fund_name": "プルデンシャル−ＰＲＵ海外株式マーケット・パフォーマー",
+    "id": "54313013",
+    "modified": 1424096287,
+    "modified_str": "2015-02-16 14:18:07",
+    "policy": "PRU海外株式マザーファンド受益証券への投資を通じて世界の主要国（日本を除く）の株式に投資し、MSCI KOKUSAIインデックス（円換算ベース）の動きに追随する投資成果を目標として運用を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.002,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外株式"
+}

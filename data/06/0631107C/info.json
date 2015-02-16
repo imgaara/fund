@@ -1,0 +1,20 @@
+{
+    "asset": "328百万円",
+    "cancellation": "なし",
+    "category": "バランス-海外・アクティブ",
+    "compensation": 0.01296,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "隔月",
+    "fee": 0,
+    "fund_name": "新光−環境保全・グローバルバランス（愛称：地球力プラス）",
+    "id": "0631107C",
+    "modified": 1424098668,
+    "modified_str": "2015-02-16 14:57:48",
+    "policy": "海外の債券と国内外の株式に分散投資するグローバル・バランス・ファンドです。原則として、隔月(年6回)の決算日に分配を行います。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.002,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "バランス型"
+}

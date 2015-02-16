@@ -1,0 +1,20 @@
+{
+    "asset": 17174000000,
+    "cancellation": "なし",
+    "category": "国内ＲＥＩＴ-アクティブ",
+    "compensation": 0.0108,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "隔月",
+    "fee": 0.0108,
+    "fund_name": "ＤＩＡＭ−Ｊ−ＲＥＩＴオープン（２ヶ月決算コース）愛称：オーナーズ・インカム２Ｍ",
+    "id": "47312042",
+    "modified": 1424097975,
+    "modified_str": "2015-02-16 14:46:15",
+    "policy": "東京証券取引所に上場し、東証ＲＥＩＴ指数に採用されている（または採用予定の）J-REIT（不動産投資信託証券）を主要投資対象とします。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から4営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内REIT"
+}

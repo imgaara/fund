@@ -1,0 +1,20 @@
+{
+    "asset": 2928000000,
+    "cancellation": "なし",
+    "category": "海外債券-アクティブ・国債",
+    "compensation": 0.00972,
+    "course": "口数",
+    "deadline": "15:00",
+    "distribution": "毎月",
+    "fee": 0.027,
+    "fund_name": "三井住友ＴＡＭ−ヨーロッパ国債ファンド（毎月決算型）（愛称：ユーロ十二星）",
+    "id": "64312032",
+    "modified": 1424098024,
+    "modified_str": "2015-02-16 14:47:04",
+    "policy": "主として高格付のユーロ建て欧州国債に分散投資します。<br>毎月分配＋年2回ボーナス分配の上乗せを目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.001,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外債券"
+}

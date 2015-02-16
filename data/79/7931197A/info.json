@@ -1,0 +1,20 @@
+{
+    "asset": 3639000000,
+    "cancellation": "なし",
+    "category": "国内株式-アクティブ・アロケーション",
+    "compensation": 0.0108,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "三井住友−株式アナライザーオープン",
+    "id": "7931197A",
+    "modified": 1424095727,
+    "modified_str": "2015-02-16 14:08:47",
+    "policy": "日本経済再生の牽引役になると思われる企業の株式に投資し、信託財産の成長をはかることを目的として積極的な運用を行います。外貨建て株式にも投資，為替ヘッジあり。",
+    "refund_date": "無期限",
+    "reservation_fee": "なし",
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の当日（国内・海外の休場により遅れる場合がございます）",
+    "type": "国内株式"
+}

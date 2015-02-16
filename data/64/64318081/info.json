@@ -1,0 +1,20 @@
+{
+    "asset": 13661000000,
+    "cancellation": "なし",
+    "category": "海外ＲＥＩＴ-インデックス",
+    "compensation": 0.00594,
+    "course": "口数・金額",
+    "deadline": "15:00",
+    "distribution": "年2回",
+    "fee": 0,
+    "fund_name": "三井住友ＴＡＭ−ＳＭＴ　グローバルＲＥＩＴインデックス・オープン",
+    "id": "64318081",
+    "modified": 1424096223,
+    "modified_str": "2015-02-16 14:17:03",
+    "policy": "Ｓ＆Ｐ先進国ＲＥＩＴ指数（除く日本、配当込み、円換算ベース）に連動する投資成果を目指します。",
+    "refund_date": "無期限",
+    "reservation_fee": 0.0005,
+    "settlement_schedule": "約定日から3営業日後",
+    "trade_schedule": "ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）",
+    "type": "海外REIT"
+}
