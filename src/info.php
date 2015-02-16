@@ -6,6 +6,7 @@ date_default_timezone_set('UTC');
 
 class Info {
   static public function GetDirectoryName($fund_id) {
+    $fund_id = substr($fund_id, -8);
     $fund_prefix = substr($fund_id, 0, 2);
     return dirname(__FILE__) . "/../data/$fund_prefix/$fund_id";
   }
@@ -46,8 +47,8 @@ class Info {
       preg_match_all('%<(th|td)>(.*)</(th|td)>%Usi', $match, $submatches);
       $tags = array_map('strtolower', $submatches[1]);
       $values = array_map('trim', $submatches[2]);
-      if (strpos($values[0], '口数：') !== FALSE) {
-        if (strpos($values[0], 'なし')) {
+      if ($tags[0] == 'td') {
+        if (strpos($values[0], 'なし') !== FALSE) {
           $data['fee'] = 0.0;
         } else if (preg_match('/(\d(?:|\.\d+))%/', $values[0], $value)) {
           $data['fee'] = floatval($value[1]) / 100;
