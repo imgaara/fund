@@ -68,10 +68,10 @@ class Info {
         '分配金' => 'distribution',
         '協会コード' => 'id',
         '取引コース' => 'course',
-        '受渡日' => 'transaction_schedule',
+        '受渡日' => 'settlement_schedule',
         '商品分類' => 'type',
         '当社締切時間' => 'deadline',
-        '約定日' => 'contract_schedule',
+        '約定日' => 'trade_schedule',
         '解約手数料 (税込)' => 'cancellation',
         '純資産' => 'asset',
         '運用方針' => 'policy',
@@ -128,6 +128,7 @@ class Info {
     } else {
       $catalog = Catalog::Get();
       $sbi_fund_ids = $catalog['funds'];
+      shuffle($sbi_fund_ids);
     }
     foreach ($sbi_fund_ids as $sbi_fund_id) {
       self::Update($sbi_fund_id);

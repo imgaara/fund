@@ -17,10 +17,10 @@ class InfoTest extends PHPUnit_Framework_Testcase {
         'distribution' => '毎月',
         'id' => '22314144',
         'course' => '口数・金額',
-        'transaction_schedule' => '約定日から4営業日後',
+        'settlement_schedule' => '約定日から4営業日後',
         'type' => '国内株式',
         'deadline' => '15:00',
-        'contract_schedule' =>
+        'trade_schedule' =>
             'ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）',
         'cancellation' => 'なし',
         'asset' => 53964000000,
