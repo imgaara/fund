@@ -1,0 +1,2476 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+<meta name="keywords" content="投資信託,SBI,ＳＢＩ,エスビーアイ,Ｅ＊トレード,E*トレード,E-トレード,Eトレード,Ｅ・トレード,イートレード,イー・トレード,e*trade,etrade,e-trade,投資,証券,オンライントレード,ＳＢＩＥ＊トレード,SBIＥ＊トレード,エスビーアイＥ＊ トレード,ＳＢＩE*トレード,SBIE*トレード,エスビーアイE*トレード,ＳＢＩE-トレード,SBIE-トレード,エスビーアイE-トレード,ＳＢＩＥ・トレード,SBIＥ・トレード,エスビーアイＥ・トレード,ＳＢＩイートレード,SBIイートレード,エスビーアイイートレード,ＳＢＩイー・トレード,SBIイー・トレード,エスビーアイイー・トレード,ＳＢＩe*trade,SBIe*trade,エスビーアイe*trade,ＳＢＩetrade,SBIetrade,エスビーアイetrade,ＳＢＩe-trade,SBIe-trade,エスビーアイe-trade">
+<meta name="Description" content="オンライントレードならSBI証券（旧SBIイー・トレード証券）。株式・投資信託・債券などをお取り扱い。業界屈指の格安手数料と豊富な情報、充実のサービスで投資ライフをしっかりサポート！">
+<title>SBI証券（旧SBIイー・トレード証券）－オンライントレードで株式・投資信託・債券を－</title>
+
+<script type='text/javascript' src='//assets.adobedtm.com/bf9691b9a367ea661dc4391d81f49f6744980a3f/satelliteLib-580728fad40c87c35445b8d04916dffcc453f01b.js'></script><script type='text/javascript' src='/JavaScript/WPLCommon.js?20141220'></script><script type='text/javascript' src='https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/js/jquery-1.9.1.min.js'></script><script type='text/javascript' src='https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/js/jquery-ui-1.10.3-custom.min.js'></script><script type='text/javascript' src='https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/js/jquery.jsonp-2.4.0.min.js'></script><script type='text/javascript' src='https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/js/qr_search_engine.min.js?20150123'></script><link rel='stylesheet' href='https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/css/jquery-ui.css' type='text/css'><STYLE TYPE='text/css'><!--#imedisable{ime-mode:disabled;}--></STYLE>
+<script language="JavaScript">
+chgStyleSheet();
+</script>
+<script type="text/javascript" src="/JavaScript/sbi_recommend.js">
+</script>
+</head>
+<body style="background-color:#ffffff;color:#333333; margin:0; padding:0;">
+<!--▼ヘッダ-->
+
+
+<script type="text/javascript">
+<!--
+
+if (window.addEventListener) { //for W3C DOM
+  window.addEventListener("load", setfocus, false);
+} else if (window.attachEvent) { //for IE
+  window.attachEvent("onload", setfocus);
+} else  {
+  window.onload = setfocus;
+}
+function setfocus(){
+        var checkflg=0;
+        var checkflg2=0;
+        for (i=0 ; document.forms.length > i ; i++){
+           for (j=0 ; document.forms[i].length > j ; j++){
+		if (document.forms[i].elements[j].name == 'tmp_quantity_total') {
+	        	checkflg = 1;
+		}
+	   }
+	}
+        for (i=0 ; document.forms.length > i ; i++){
+           for (j=0 ; document.forms[i].length > j ; j++){
+		if (document.forms[i].elements[j].name == 'calc_quantity_total') {
+	        	checkflg2 = 1;
+		}
+	   }
+	}
+        if (checkflg == 1 && checkflg2 == 1){
+           calc_quantity();
+        }
+	var end_flg = 0;
+	for (i=0 ; document.forms.length > i ; i++){
+		if ((document.forms[i].name != "MyFormHDR") && (document.forms[i].name != "MyFormHDRS") && (document.forms[i].name != "codeSearchForm") && (document.forms[i].name != "fundSearchForm")){
+			for (j=0 ; document.forms[i].length > j ; j++){
+				    if ((document.forms[i].elements[j].type == "text" || document.forms[i].elements[j].type == "password") && !document.forms[i].elements[j].disabled == true){
+					document.forms[i].elements[j].focus();
+					end_flg = 1;
+					break;
+				}
+			}
+		}
+		if (end_flg == 1) {
+		  break;
+		}
+	}
+
+}
+
+
+
+function enter(e){
+   if(!e) var e=window.event;
+   if(e.keyCode == 13 ){
+     return stockcheck(e);
+   }
+}
+function stockcheck(input){
+   var codeDefaultValue = '銘柄名・コード・キーワード';
+   var topCodeSearchValue = document.MyFormHDR.i_stock_sec.value;
+   if(topCodeSearchValue == ''|| topCodeSearchValue == codeDefaultValue){
+        document.MyFormHDR.i_stock_sec.focus();
+        return false;
+   } else {
+
+        doQRSearch("","",topCodeSearchValue,"0","0","0","99","0",doQRSearchCallback,{"action":"/ETGate/","_ControlID":"WPLETsiR001Control","_PageID":"WPLETsiR001Iser10","_DataStoreID":"DSWPLETsiR001Control","_ActionID":"clickToSearchStockPriceJP","i_dom_flg":"1","ref_from":1,"ref_to":0,"wstm4130_sort_id":"  ","wstm4130_sort_kbn":" ","i_exchange_code": "JPN"});
+        return false;
+   }
+}
+// -->
+</SCRIPT>
+
+<noscript>当サイトをご利用になるためには、JavaScript対応のブラウザが必要です。また、設定でJavaScriptを有効にする必要があります。</noscript>
+
+
+
+<!--css_all.html-->
+
+
+
+
+<a id="PAGETOP" name="PAGETOP"></a>
+
+<!--// ▼▼▼▼▼ HEAD 開始 ▼▼▼▼▼ //-->
+<div id="HEADER01">
+<form name="MyFormHDR" method="post" action="/ETGate/" class="margin-4" onKeyPress="return enter(event);">
+
+
+          <h1 id="logo"><a href="/ETGate/?_ControlID=WPLEThmR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLEThmR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_logo.gif" width="145" height="28" alt="SBI証券（旧SBIイー・トレード証券：ネット証券最大手）－オンライントレードで株式・投資信託・債券を－" title="SBI証券（旧SBIイー・トレード証券：ネット証券最大手）－オンライントレードで株式・投資信託・債券を－"></a></h1>
+          
+          
+
+
+              <div id="srchK"><input type="text" id="top_stock_sec" name="i_stock_sec"  value="銘柄名・コード・キーワード" autocomplete="off" maxlength="200" onblur="if(this.value==''){this.style.color='#999999'; this.form.reset()}" onfocus="{this.style.color='#000000'; this.value = ''}" style="width: 145px; height:25px; border-top: solid 1px #B3B3B3; border-bottom: solid 1px #B3B3B3; border-left: solid 1px #B3B3B3; border-right: none; margin: 0; padding: 0px 0px 0px 3px;line-height:25px; color:#999999" ><a href="javascript:void(0);" onclick="JavaScript:return stockcheck();" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_kabuka.gif" width="63" height="25" alt="株価検索" title="株価検索"></a></div>
+              </form>
+<!--サイト内検索-->
+              <form name="MyFormHDRS" method="get" action="https://insite.sbisec.co.jp/ja_all/search.x"  >
+              <div id="srchS"><input type="text" name="q" value="" 
+              id="MF_form_phrase" autocomplete="off" style="width: 120px; height:25px; font-size: 14px; border-top: solid 1px #B3B3B3; border-bottom: solid 1px #B3B3B3; border-left: solid 1px #B3B3B3; border-right: none; margin: 0; padding: 0px 0px 0px 3px;line-height:25px"  
+              maxlength="360"><input type="hidden" name="ie" value="SJIS"><input
+              type="hidden" name="page" value="1"><b onmouseover="revSetOverAction(this);" 
+              onmouseout="revSetOutAction(this);"><input type="image"
+              src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_site.gif" alt="サイト内検索" title="サイト内検索" 
+              style="height:25px; width:85px; margin: 0; padding: 0;"></b></div>
+<!--//サイト内検索-->
+</form>
+
+	<!--↓-->
+	<div id="link01">
+		<div id="link01M" class="floatClear">
+			<ul>
+				<li><a href="javascript:void(0);" onClick="openHelpFocus('//search.sbisec.co.jp/v2/popwin/help/index.html')" onKeypress="">ヘルプ</a></li>
+				<li><a href="http://faq.sbisec.co.jp" target="_blank">Q&amp;A</a></li>
+            			<li><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=none&amp;dir=sitemap&amp;file=home_sitemap.html&amp;OutSide=on&amp;getFlg=on">サイトマップ</a></li>
+            			<li class="last"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=none&amp;dir=support&amp;file=home_support.html&amp;getFlg=on">お問い合わせ</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--↑-->
+
+	<!--↓-->
+	<div id="link02">
+		<div id="link02M" class="floatClear">
+			<ul>
+				<li><a href="/ETGate/?_ControlID=WPLETpfR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETpfR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on"  onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_port.gif"  alt="ポートフォリオ" title="ポートフォリオ" width="117" height="30"></a></li>
+				<li><a href="/ETGate/?_ControlID=WPLETstT001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETstT001Control&amp;_ActionID=DefaultAID&amp;getFlg=on"  onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_trade.gif" alt="取引" title="取引" width="76" height="30"></a></li>
+				<li><a href="/ETGate/?_ControlID=WPLETacR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETacR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on"  onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_account02.gif" alt="口座管理" title="口座管理" width="85" height="30"></a></li>
+				<li><a href="/ETGate/?_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=Banking&amp;cat1=home&amp;cat2=none&amp;getFlg=on"  onmouseover="revSetOverAction(this);"onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_inout.gif" alt="入出金・振替" title="入出金・振替" width="110"height="30"></a></li>
+				
+			</ul>
+		</div>
+	</div>
+	<!--↑-->
+</div>
+<script type="text/javascript">
+<!--
+suggest=Object.create(qrSearchEngine.stockSuggest.stockSuggest);
+suggest.show("","","top_stock_sec");
+-->
+</script>
+<!--// ▲▲▲▲▲ HEAD 終了 ▲▲▲▲▲ //-->
+
+<!--// ▼▼▼▼▼ NAVI 開始 ▼▼▼▼▼ //-->
+<!--*navi1--><div id="NAVIAREA01"><div id="navi01"><div id="navi01P" class="floatClear"><ul><li><a href="/ETGate/?_ControlID=WPLEThmR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLEThmR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_home.gif" width="80" height="36" alt="ホーム" title="ホーム"></a></li><li><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_top&amp;cat1=market&amp;cat2=top&amp;dir=tl1-top%7Ctl2-map%7Ctl5-jpn&amp;file=index.html&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_market.gif" width="92" height="36" alt="マーケット" title="マーケット"></a></li><li><a href="/ETGate/?_ControlID=WPLETsiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETsiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_domestic.gif" width="92" height="36" alt="国内株式" title="国内株式"></a></li><li><a href="/ETGate/?_ControlID=WPLETusR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETusR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_foreign.gif" width="92" height="36" alt="外国株式" title="外国株式"></a></li><li><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_fund_act.gif" width="72" height="36" alt="投信・投資信託" title="投信・投資信託"></a></li><li><a href="/ETGate/?_ControlID=WPLETbiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETbiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_bond.gif" width="72" height="36" alt="債券" title="債券"></a></li><li><a href="/ETGate/?_ControlID=WPLETfxR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETfxR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_fx.gif" width="72" height="36" alt="FX" title="FX"></a></li><li><a href="/ETGate/?_ControlID=WPLETopR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETopR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_op.gif" width="127" height="36" alt="先物・オプション" title="先物・オプション"></a></li><li><a href="/ETGate/?_ControlID=WPLETdiR001Control&amp;_PageID=WPLETcwR001Mlst10&amp;_DataStoreID=DSWPLETdiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_warrant.gif" width="75" height="36" alt="カバードワラント" title="カバードワラント"></a></li><li><a href="/ETGate/?_ControlID=WPLETniR001Control&amp;_PageID=WPLETniR001Mlst10&amp;_DataStoreID=DSWPLETniR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_nisa.gif" width="68" height="36" alt="NISA" title="NISA"></a></li><li><a href="/ETGate/?_ControlID=WPLETbkR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETbkR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_bank.gif" width="68" height="36" alt="銀行" title="銀行"></a></li><li><a href="/ETGate/?_ControlID=WPLETdiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETdiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head03_other.gif" width="68" height="36" alt="保険他" title="保険他"></a></li><li><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_back_03.gif" width="2" height="36" alt=""></li></ul></div></div></div>
+
+<!--▲ヘッダ-->
+<!--▼メニュー-->
+
+<!--*navi2--><div id="NAVIAREA02"><div id="navi02"><div id="navi02P" class="floatClear"><ul><li><div class="navi2MAct"><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Iser10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">TOP</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=offering%2F&amp;file=fund_offering_top.html&amp;cat1=fund&amp;cat2=offering&amp;getFlg=on">新規取扱</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETspR001Control&amp;_PageID=NoPageID&amp;_DataStoreID=DSWPLETspR001Control&amp;_SeqNo=1424038721448_ajp_127.0.0.1_8009_27_WPLETfiR001Idtl11_DefaultAID&amp;getFlg=on&amp;_ActionID=NoActionID">パワーサーチ</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=info%2F&amp;file=fund_report.html&amp;cat1=fund&amp;cat2=report&amp;getFlg=on">レポート</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;OutSide=on&amp;getFlg=on&amp;burl=search_fund&amp;cat1=fund&amp;cat2=save&amp;dir=info%2F&amp;file=fund_tsumitate.html">積立</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=edeliv%2F&amp;file=fund_edeliv_01.html&amp;cat1=fund&amp;cat2=lineup&amp;getFlg=on">取扱投信一覧</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Clst10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">委託会社一覧</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Mlst10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">外貨建MMF</a></div></li><li><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=mmf%2F&amp;file=fund_mmf.html&amp;cat1=fund&amp;cat2=mmfdomestic&amp;getFlg=on">MMF・中期国債F・MRF</a></div></li><li class="last"><div class="navi2M"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;dir=info%2F&amp;file=home_jibun.html&amp;cat1=home&amp;cat2=none&amp;getFlg=on&amp;OutSide=on">じぶん年金</a></div></li></ul></div></div></div><!--/*navi2-->
+<!--▲メニュー-->
+<div id="middleArea">
+  <div id="middleAreaM">
+
+
+
+
+
+<p class="timeStamp">2015-02-16 07:18:43</p>
+
+    <table class="loTblMid" border="0" cellspacing="0" cellpadding="0" summary="layout">
+      <tr valign="top">
+        <td class="loMain">
+          <div id="main">
+              <!--▽タイトル-->
+              <div class="head01Area01">
+              <h2 class="head01">投資信託</h2>
+              <div class="txtR01">
+              <p>&nbsp;</p>
+              </div>
+              </div>
+              <!--△タイトル-->
+
+              <!--▼エラーメッセージ-->
+              
+
+
+
+
+
+
+
+
+
+              
+              
+                
+                
+                
+                
+                
+              
+              
+                
+                
+                
+                
+                
+              
+              <!--▲エラーメッセージ-->
+
+                    <form name="FORM" method="post" action="/ETGate/">
+                      <INPUT TYPE='hidden' name='_PageID' value='WPLETfiR001Idtl11'>
+<INPUT TYPE='hidden' name='_DataStoreID' value='DSWPLETfiR001Control'>
+<INPUT TYPE='hidden' name='_SeqNo' value='1424038721448_ajp_127.0.0.1_8009_27_WPLETfiR001Idtl11_DefaultAID'>
+<INPUT TYPE='hidden' name='_ControlID' value='WPLETfiR001Control'>
+<INPUT TYPE='hidden' name='_WID' value='NoWID'>
+<INPUT TYPE='hidden' name='_ORGWID' value=''>
+<INPUT TYPE='hidden' name='_WIDManager' value=''>
+<INPUT TYPE='hidden' name='_WBSessionID' value='FAC03439AB0D85574983AF342BDCFC3C'>
+<INPUT TYPE='hidden' name='_preProcess' value=''>
+<INPUT TYPE='hidden' name='_TimeOutControl' value=''>
+<INPUT TYPE='hidden' name='_WIDMode' value='0'>
+<INPUT TYPE='hidden' name='_WindowName' value=''>
+<INPUT TYPE='hidden' name='_ReturnPageInfo' value=''>
+ 
+                      <!--<input type="hidden" name="_ActionID">-->
+                      <!--▽ファンド検索-->
+                      
+
+<input type="hidden" name="_ActionID" value="clickToSearchFund">
+<!--▽ファンド検索-->
+<div class="pdgt10">
+<div class="srchBox02"><div class="srchBox02T"><div class="srchBox02B">
+<div class="srchInput">
+<table class="fundSrch01" border="0" cellspacing="0" cellpadding="0" summary="layout">
+<tr>
+<td class="alR"><p class="srchInputH"><span class="fl01">委託会社名・ファンド名&nbsp;：&nbsp;</span></p></td>
+<td><input name="search_name" type="text" maxlength="80" size="30" value=""></td>
+
+<td rowspan="2"><div style="padding-left:25px;"><input type="submit" value="検索" name="ACT_clickToSearchFund" style="padding-top:1px"></div></td>
+
+<td class="td03" rowspan="2">
+<div class="iLink01"><p class="fm01"><a href='/ETGate/?_ControlID=WPLETspR001Control&amp;_PageID=NoPageID&amp;_DataStoreID=DSWPLETspR001Control&amp;_SeqNo=1424038721448_ajp_127.0.0.1_8009_27_WPLETfiR001Idtl11_DefaultAID&amp;getFlg=on&amp;_ActionID=NoActionID'>パワーサーチ</a></p></div>
+<div class="mgt8">
+<div class="iLink01"><p class="fm01"><a href='/ETGate/?_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=edeliv%2F&amp;file=fund_edeliv_01.html&amp;cat1=fund&amp;cat2=lineup&amp;getFlg=on'>取扱投信一覧</a>&nbsp;(取扱：<span class="fRed01"><strong>1862</strong>本</span>)</p></div>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="alR"><div class="mgt5"><p class="srchInputH"><span class="fl01">ＳＢＩカテゴリ&nbsp;：&nbsp;</span></p></div></td>
+<td>
+<div class="mgt5">
+<select name="et_category">
+     <option value=" ">指定なし</option><option value="国内株式">国内株式</option><option value="海外株式">海外株式</option><option value="新興国株式">新興国株式</option><option value="国内債券">国内債券</option><option value="海外債券">海外債券</option><option value="新興国債券">新興国債券</option><option value="国内ＲＥＩＴ">国内ＲＥＩＴ</option><option value="海外ＲＥＩＴ">海外ＲＥＩＴ</option><option value="バランス">バランス</option><option value="コモディティ">コモディティ</option><option value="ノーロード">ノーロード</option><option value="積立">積立</option><option value="定期分配">定期分配</option><option value="海外債券地域">海外債券地域</option><option value="環境">環境</option><option value="ＩＴ">ＩＴ</option><option value="Ｍ＆Ａ">Ｍ＆Ａ</option><option value="インフラ">インフラ</option><option value="ＳＲＩ">ＳＲＩ</option><option value="金融">金融</option><option value="通貨選択型">通貨選択型</option><option value="バイオ">バイオ</option><option value="ブランド">ブランド</option><option value="水">水</option><option value="地域応援">地域応援</option><option value="低位株">低位株</option><option value="農業">農業</option><option value="ブラジル">ブラジル</option><option value="資源">資源</option><option value="為替ヘッジ">為替ヘッジ</option><option value="東南アジア株式">東南アジア株式</option><option value="豪州">豪州</option><option value="配当株">配当株</option><option value="カバードコール">カバードコール</option><option value="国内株式-インデックス">国内株式-インデックス</option>
+</select>
+</div>
+</td>
+</tr>
+
+</table>
+</div>
+</div></div></div>
+</div>
+<!--△ファンド検索-->
+                      <!--△ファンド検索-->
+
+
+
+                            <!--▽ファンド-->
+                            
+
+<!--▽一覧へ戻る-->
+
+<!--△一覧へ戻る-->
+
+<!--▽ファンド-->
+<div class="mgt15">
+<div style="padding: 2px 10px 0 10px;"><h3 class="fll01">大和住銀－日本株アルファ・カルテット（毎月分配型）</h3></div>
+</div>
+<!--△ファンド-->
+
+
+
+
+ 
+  
+  
+
+  
+                            <!--△ファンド-->
+      
+                            <!--▽画面固有部1-->
+                            
+<!--▼-->
+<style type="text/css">
+<!--
+.trTbl04 {border-top: solid 1px #CECDBF;}
+.trTbl04 th {border-right: solid 1px #CECDBF; border-bottom: solid 1px #CECDBF; background: #F9F9EE; text-align: left; font-weight: normal;}
+.trTbl04 th .thM {padding: 2px 5px 2px 5px;}
+.trTbl04 td {border-bottom: solid 1px #CECDBF;}
+.trTbl04 td .tdM {padding: 2px 5px 2px 5px; }
+
+//-->
+</style>
+
+<div class="mgt10">
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" style="width: 690px;">
+
+<tr class="vat" valign="top">
+<!--▽left-->
+<td style="width:370px;">
+
+<!--▽▽-->
+
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04" style="width:100%; margin-bottom:15px;">
+<tr>
+<th><div style="padding: 3px 5px 2px 5px;">
+<p class="fm01" style="line-height: 1.4;">基準価額</p>
+</div></th>
+<td colspan="3"><div style="padding: 3px 8px 2px 8px;">
+<p style="line-height: 1;"><strong class="fll01">8,919</strong><strong class="fm01 fUp">↑</strong><span class="fs01">&nbsp;/10,000<span class="fGray01">&nbsp;&nbsp;(15/02/13&nbsp;現在)</span></span></p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01">前日比</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01"><font color="red">+77</font>&nbsp;(<font color="red">+0.87％</font>)</p>
+</div></td>
+<th style="border-left: solid 1px #CECDBF;"><div class="thM">
+<p class="fm01">52週高値</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">10,773<span class="fs01"><span class="fGray01">&nbsp;(14/07/03)</span></span></p>
+</div></td>
+</tr>
+
+<tr>
+<th style="width:18%;"><div class="thM">
+<p class="fm01">純資産</p>
+</div></th>
+<td style="width:32%;"><div class="tdM">
+<p class="fm01">53,964百万円</p>
+</div></td>
+<th style="width:20%; border-left: solid 1px #CECDBF;"><div class="thM">
+<p class="fm01">52週安値</p>
+</div></th>
+<td style="width:30%;"><div class="tdM">
+<p class="fm01">8,810<span class="fs01"><span class="fGray01">&nbsp;(14/10/20)</span></span></p>
+</div></td>
+</tr>
+
+</table>
+<!--△△-->
+
+<!--▽個別銘柄のファンド情報（申込メモ）-->
+      
+       <style type="text/css">
+<!--
+.trTbl04 {border-top: solid 1px #CECDBF;}
+.trTbl04 th {border-right: solid 1px #CECDBF; border-bottom: solid 1px #CECDBF; background: #F9F9EE; text-align: left; font-weight: normal;}
+.trTbl04 th .thM {padding: 2px 5px 2px 5px;}
+.trTbl04 td {border-bottom: solid 1px #CECDBF;}
+.trTbl04 td .tdM {padding: 2px 5px 2px 5px; }
+
+//-->
+</style>
+
+<!--▽▽-->
+
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04" style="width:100%; margin-bottom:15px;">
+
+
+
+<tr>
+
+<th style="width:34%;"><div class="thM">
+
+<p class="fm01">取引コース</p>
+
+</div></th>
+
+<td style="width:25%;"><div class="tdM">
+
+<p class="fm01">口数・金額</p>
+
+</div></td>
+
+<th style="border-left: solid 1px #CECDBF;width:20%;"><div class="thM">
+
+<p class="fm01">協会コード</p>
+
+</div></th>
+
+<td style="width:21%;"><div class="tdM">
+
+<p class="fm01">22314144</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">商品分類</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">国内株式</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">定期売却</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">申込可</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">運用方針</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">新たな成長ステージに向かう日本経済に注目、日本の株式に投資します。「高金利通貨戦略」を行うことで、為替取引によるプレミアム収益（金利差相当分の収益）の確保を目指します。「株式カバードコール戦略」および「通貨カバードコール戦略」を行うことで、オプションプレミアムの確保を目指します。毎月の決算日に、原則として収益の分配を目指します。</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">買付単位</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">口数：1万口以上1万口単位／金額：1万円以上1円単位／積立：500円以上1円単位</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">売却単位</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">口数：1万口／金額：1円</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">当初一口当り元本</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">1円</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">買付手数料&nbsp;(税込)</p>
+
+</div></th>
+
+<td colspan="3">
+
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" style="width:100%;">  
+<tr>  
+<th style="border-top: solid 3px #FFC4CE; width:50%;"><div class="thM alC">  
+
+<p class="fm01">インターネットコース</p>  
+
+</div></th>  
+
+<th style="border-top: solid 3px #BCE6FC; border-right: none"><div class="thM alC">  
+
+<p class="fm01">ダイレクトコース／対面コース／IFAコース</p>  
+
+</div></th>  
+</tr>  
+
+<tr>  
+<td style="border-right: #cecdbf 1px solid; border-bottom:none" valign="top"><div class="tdM">  
+
+<p class="fm01">口数：なし／金額：なし</p>  
+
+</div></td>
+
+<td style="border-bottom: none" valign="top"><div class="tdM">  
+
+<p class="fm01">口数： 3.24%／金額： 3.24%</p>  
+
+</div></td>  
+</tr>
+
+<tr>  
+<td style="border-right: #cecdbf 1px solid; border-bottom:none" valign="top"><div class="tdM">  
+
+<p class="fm01"><br>金額（NISA預り）：なし</p>  
+
+</div></td>
+
+<td style="border-bottom: none" valign="top"><div class="tdM">  
+
+<p class="fm01"><br>金額（NISA預り）： 3.24%</p>  
+
+</div></td>  
+</tr>
+</table>  
+
+
+<td>
+
+
+
+</tr>  
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">信託報酬&nbsp;(税込)/年</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">1.902%程度</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">信託財産留保額</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">0.3%</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">解約手数料&nbsp;(税込)</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">なし</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">償還優遇の適用</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">なし</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">当社締切時間</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">15:00</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">約定日</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">ご注文日の翌営業日（国内・海外の休場により遅れる場合がございます）</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">受渡日</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">約定日から4営業日後</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">決算日</p>
+
+</div></th>
+
+<td><div class="tdM">
+
+<p class="fm01">毎月4日</p>
+
+</div></td>
+
+
+<th style="border-left: solid 1px #CECDBF;"><div class="thM">
+
+<p class="fm01">分配金</p>
+
+</div></th>
+
+<td><div class="tdM">
+
+<p class="fm01">毎月</p>
+
+</div></td>
+
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01">分配金受取方法</p>
+</div></th>
+<td colspan="3"><div class="tdM">
+<p class="fm01">口数：証券口座でのお受取／金額：証券口座でのお受取または再投資</p>
+</div></td>
+</tr>
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">設定日</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">2014/04/04</p>
+
+</div></td>
+
+</tr>
+
+
+
+<tr>
+
+<th><div class="thM">
+
+<p class="fm01">償還日</p>
+
+</div></th>
+
+<td colspan="3"><div class="tdM">
+
+<p class="fm01">2019/04/04</p>
+
+</div></td>
+
+</tr>
+
+
+
+</table>
+
+<!--△△-->
+
+
+<!--△個別銘柄のファンド情報（申込メモ）-->
+
+<!--▽モーニングスター（MS）レポート＆ファンド情報-->
+                
+                <!--▽▽-->
+<div class="mgl10">
+<div class="headSsBl01">
+<h5 class="ttlM">モーニングスター（MS）レポート＆ファンド情報</h5>
+</div>
+</div>
+
+<!-- trTbl04 -->
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04 mgt5" style="width:100%; margin-bottom:15px;">
+
+<tr>
+<th style="width:48%;"><div class="thM">
+<p class="fm01">SBIカテゴリ</p>
+</div></th>
+<td style="width:52%;"><div class="tdM">
+<p class="fm01">国内株式-アクティブ・大型・一般</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="javascript:void window.open('http://www.morningstar.co.jp/help/fund/h_category.html','popwin','width=640,height=500,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">MSカテゴリ</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM"></p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">国内大型ブレンド</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="javascript:void window.open('http://search.sbisec.co.jp/v2/popwin/info/fund/pop4040_msr.html','popwin','width=440,height=400,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">MSレーティング</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM">&nbsp;(前月)</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">－&nbsp;－&nbsp;(－)</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01">週間&nbsp;/月間 騰落率</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">-4.39％&nbsp;/&nbsp;0.55％</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01">週間&nbsp;/月間純資産増加額</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">666,000,000&nbsp;/&nbsp;11,262,000,000</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&_PageID=WPLETmgR001Mdtl20&_DataStoreID=DSWPLETmgR001Control&_ActionID=DefaultAID&burl=iris_ranking&cat1=market&cat2=ranking&dir=tl1-rnk%7Ctl2-fund%7Ctl3-resrank%7Ctl4-price&file=index.html&getFlg=on">当社販売実績</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM">&nbsp;(前週)</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">3位&nbsp;<strong class='fm01 fDown'>↓</strong>&nbsp;(2位)</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="javascript:void window.open('http://www.nomura-am.co.jp/glossary/etrade/index.php?mode=details&term_id=340&kana_id=03-05&en_id=10-20','popwin','width=640,height=500,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">トータルリターン</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM"><br>(6ヶ月/1年/3年)</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">8.51％&nbsp;/&nbsp;－％&nbsp;/&nbsp;－％</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="javascript:void window.open('http://www.nomura-am.co.jp/glossary/etrade/index.php?mode=details&term_id=391&kana_id=05-02&en_id=10-19','popwin','width=640,height=500,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">&#963;－シグマ</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM">&nbsp;(1/3/5年)</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">－&nbsp;/&nbsp;－&nbsp;/&nbsp;－</p>
+</div></td>
+</tr>
+
+<tr>
+<th><div class="thM">
+<p class="fm01"><a href="javascript:void window.open('http://www.nomura-am.co.jp/glossary/etrade/index.php?mode=details&term_id=193&kana_id=02-02&en_id=10-19','popwin','width=640,height=500,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">シャープレシオ</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" class="vaM">&nbsp;(1/3/5年)</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01">－&nbsp;/&nbsp;－&nbsp;/&nbsp;－</p>
+</div></td>
+</tr>
+
+<!--
+<tr>
+<th><div class="thM">
+<p class="fm01">MSアワード</p>
+</div></th>
+<td><div class="tdM">
+<p class="fm01"></p>
+</div></td>
+</tr>
+-->
+</table>
+<!-- /trTbl04 -->
+<!--△△-->
+
+
+<!--△モーニングスター（MS）レポート＆ファンド情報-->
+
+
+</td>
+<!--△left-->
+                            <!--△画面固有部1-->
+                            
+                            <!--▽画面固有部2-->
+                            
+
+
+<td><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/trans.gif" width="20" height="1" alt=""></td>
+<!--▽right-->
+<td style="width:300px;">
+
+<!--▽買付-->
+
+<table cellspacing="0" cellpadding="0" border="0" style="width:300px; background-color:#f9f9ee; border:2px solid #cecdbf; padding:10px 4px 10px 6px; margin-bottom:10px;" summary="layout">
+<tr><td>
+
+<a onmouseout="revSetOutAction(this);" onmouseover="revSetOverAction(this);" href='/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;s_rflg=&amp;sec_id=Y&amp;getFlg=on&amp;fund_sec_code=222314144&amp;accBuyFlg=0&amp;search_name=&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;goBack_PageID='><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/b_fund_kai_kingaku.gif" width="90" height="31" alt="金額買付"class="vaM"></a>
+           <a onmouseout="revSetOutAction(this);" onmouseover="revSetOverAction(this);" href='/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;s_rflg=&amp;sec_id=T&amp;getFlg=on&amp;fund_sec_code=122314144&amp;accBuyFlg=0&amp;sort_key=00&amp;sort_kbn=1&amp;search_name=&amp;et_category=&amp;goBack_PageID='><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/b_fund_kai_kuchisu.gif" width="90" height="31" alt="口数買付"class="vaM" style="margin-left:2px;"></a>
+           <a onmouseout="revSetOutAction(this);" onmouseover="revSetOverAction(this);" href='/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=goAccBuy&amp;getFlg=on&amp;s_rflg=&amp;sec_id=A&amp;fund_sec_code=222314144&amp;accBuyFlg=1&amp;search_name=&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;goBack_PageID='><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/b_fund_kai_tsumitate.gif" width="90" height="31" alt="積立買付"class="vaM" style="margin-left:2px;"></a>
+           
+</td>
+</tr>
+</table>
+
+     
+<!--▽買付-->
+
+
+
+<div style="margin-bottom:10px;">
+<p class="fm01">
+
+【NISA対象ファンド】<br>「口数買付」はNISA預りをご指定できません。<br>
+
+「口数買付」の分配金はお客様の証券総合口座でのお受取となります。「金額買付」および「積立買付」の分配金は、お客様の証券総合口座でのお受取または再投資となります。
+</p>
+</div>
+
+<!--▽portf追加、目論見書/運用レポート-->
+<div style="margin-bottom:10px;">
+<p class="fm01">
+<a href="/ETGate/?_ControlID=WPLETpfR001Control&amp;_PageID=WPLETpfR001Eins13&amp;_DataStoreID=DSWPLETpfR001Control&amp;_SeqNo=1424038721448_ajp_127.0.0.1_8009_27_WPLETfiR001Idtl11_DefaultAID&amp;getFlg=on&amp;_ActionID=viewPf&amp;src_web_sec_code=122314144&amp;src_sec_id=IT&amp;src_market_id=JPN&amp;link_url=%2FETGate%2F%3F_ControlID%3DWPLETfiR001Control%26amp%3B_DataStoreID%3DDSWPLETfiR001Control%26amp%3B_PageID%3DWPLETfiR001Idtl11%26amp%3BgetFlg%3Don%26amp%3B_ActionID%3DDefaultAID%26amp%3Bs_rflg%3D%26amp%3Bsec_id%3D%26amp%3Bsort_key%3D00%26amp%3Bsort_kbn%3D1%26amp%3Bref_from%3D00001%26amp%3Bref_to%3D00020%26amp%3Bref_from1%3D00001%26amp%3Bref_to1%3D00005%26amp%3Bfund_sec_code%3D122314144%26amp%3Bsearch_name%3D%26amp%3Bet_category%3D%26amp%3BgoBack_PageID%3D" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/b_dom_portfoliotsuika.gif" width="132" height="23" alt="ポートフォリオへ追加" title="ポートフォリオへ追加" class="vaM"></a>
+&nbsp;&nbsp;
+<img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_03.gif" width="14" height="11" border="0" alt="新しいウィンドウで開きます。" title="新しいウィンドウで開きます。" class="vaM"><a href="javascript:void(0);" onClick="window.open('/ETGate/?_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl10&amp;_ActionID=noLogin&amp;sw_page=Trust&amp;cat1=home&amp;cat2=none&amp;getFlg=on&amp;sw_param1=popup&amp;sw_param2=41%3B22314144','pop_fund','width=550,height=480,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5').focus()">目論見書/運用レポート</a>
+</p>
+</div>
+<!--△portf追加、目論見書/運用レポート-->
+
+<!--▽当社からのお知らせ-->
+                
+                <style type="text/css">
+<!--
+.fondinfoBox {padding-bottom: 4px; border-bottom: solid 1px #E3E3E3; background: #F2F2F2; text-align: center; margin-bottom:15px;}
+.fondinfoBoxH {min-height: 31px; background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/bg_extrabox01h_01.gif) no-repeat; text-align: left; }
+
+.fondinfoBoxH:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.fondinfoBoxH {display: inline-block;}
+/*\*/
+* html .fondinfoBoxH {height: 31px;}
+.fondinfoBoxH {display: block;}
+/**/
+.fondinfoBoxH .ttlM {padding: 9 8 3 21;}
+/*\*/
+* html .fondinfoBoxH .ttlM {padding: 10 8 3 21;}
+/**/
+*:first-child+html .fondinfoBoxH .ttlM {padding: 9 8 3 21;} /* For IE7 */
+.fondinfoBoxH .rateL {float: left; width: 185px; text-align: left;}
+.fondinfoBoxH .rateR {float: right; width: 85px; text-align: right;}
+
+.fondinfoBoxC {margin: 0 4 0 4; border: solid 1px #e8e8e8; background: #fff; text-align: left;}
+.fondinfoBoxCM {padding: 4px 5px 3px 8px;}
+//-->
+</style>
+
+<!--▽▽-->
+<div class="fondinfoBox">
+<div class="fondinfoBoxH">
+<div class="ttlM">
+<div class="rateL"><h5 class="fl01">当社からのお知らせ</h5></div>
+<div class="rateR fs01">(14/04/04更新)</div>
+</div>
+</div>
+<div class="fondinfoBoxC"><div class="fondinfoBoxCM">
+<p class="fm01">
+<font color="red">≪重要≫</font>本ファンドは、「毎月分配型」または「通貨選択型」の投資信託となります。お取引の前に必ず「<a href="http://search.sbisec.co.jp/v2/popwin/info/fund/fund_mokuromituiki.pdf" target="_blank">毎月分配型投資信託・通貨選択型投資信託に関するご注意事項</a>」の内容をご確認いただきますようお願いいたします。
+
+</p>
+</div></div>
+</div>
+<!--△△-->
+
+
+<!--△当社からのお知らせ-->
+
+<!--▽委託会社からのお知らせ-->
+                
+                
+<!--△委託会社からのお知らせ-->
+
+<!--▽モーニングスター社のコメント-->
+                
+                
+<!--△モーニングスター社のコメント-->
+<!--▽基準価額＆純資産履歴-->
+                
+                
+<!--▽▽-->
+<style type="text/css">
+<!--
+#main .fundrateBox01 {border: solid 1px #cdcdcd; padding-top: 2px; text-align: center;}
+#main .fundrateBox01T {margin: 0 2 0 2; background: #eee url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/bg_ratebox01_01.gif) repeat-x;}
+#main .fundrateBox01T:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#main .fundrateBox01T {display: inline-block;}
+/*\*/
+* html #main .fundrateBox01T {height: 1%;}
+#main .fundrateBox01T {display: block;}
+/**/
+#main .fundrateBox01 .rateImg {margin: 5 0 5 0; text-align: center;}
+//-->
+</style>
+
+
+<div style="margin-bottom:15px;">
+<div class="fundrateBox01">
+
+<!--↓-->
+<div class="fundrateBox01T">
+<div style="padding: 7 0 4 5; text-align: left;"><h5 class="fl01">基準価額＆純資産履歴</h5></div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="alL" style="padding:5 10 0 10;"><p class="fs01"><strong style="color:#00ff00;">━</strong>&nbsp;基準価額（円）&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;">━</span>純資産総額（百万円）</p></div>
+
+
+<div class="rateImg"><img src="https://search.sbisec.co.jp/v2/fund/contents/fg_22314144.gif" width="296" height="192" alt="" border="0"></div>
+
+<!--↑-->
+
+
+
+
+</div>
+</div>
+<!--△△-->
+
+
+<div class="mgl10">
+<div class="headSsBl01">
+<h5 class="ttlM">休場日</h5>
+</div>
+</div>
+
+<!-- trTbl04 -->
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04 mgt5" style="width:100%; margin-bottom:15px;">
+
+<tr>
+<th style="width: 40%;"><div class="thM">
+<p class="fm01">当月</p>
+</div></th>
+<td style="width :60%;"><div class="tdM">
+<p class="fm01"><span class="fRed01"><strong>2/16</strong></span></p>
+</div></td>
+</tr>
+<th style="width: 40%;"><div class="thM">
+<p class="fm01">翌月</p>
+</div></th>
+<td style="width: 60%;"><div class="tdM">
+<p class="fm01">-</p>
+</div></td>
+</tr>
+</table>
+
+
+
+
+<!-- trTbl04 -->
+<!-- limit_date display start -->
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04 mgt5" style="width:100%; margin-bottom:15px;">
+
+<tr>
+<th style="width: 40%;"><div class="thM">
+<p class="fm01">締切日時</p>
+</div></th>
+<td style="width :60%;"><div class="tdM">
+<p class="fm01">2015/02/17　15:00</p>
+<p class="fm01">※2015/02/17　15:00以降は、2015/02/18　15:00となります。</p>
+</div></td>
+</tr>
+</table>
+<!-- limit_date display end -->
+
+
+<!--△基準価額＆純資産履歴-->
+
+<!--▽分配金実績-->
+                
+                <style type="text/css">
+<!--
+.fondTblline {border-left: solid 1px #dddddd;border-bottom: solid 1px #dddddd;}
+.fondTblline th {background: #dddddd; text-align: center; font-weight: normal;}
+.fondTblline thead th .thM {padding: 3px 3px 2px 3px;}
+.fondTblline th .thM {padding: 2px 3px 1px 3px;}
+.fondTblline td .tdM {position: relative; padding: 2px 3px 1px 3px;}
+.fondTblline th .thM .fm01,
+.fondTblline td .tdM .fm01 { line-height: 1.2; }
+.fondTblline td {background: #ffffff; border-right: 1px solid #dddddd; text-align: center;}
+.fondTblline tr.odd td {background: #EBF3FA; }
+//-->
+</style>
+<!--▽▽-->
+<div class="floatClear">
+<div class="mgl10">
+
+<div class="floatL" style="width: 140px;">
+<div class="headSsBl01">
+<h5 class="ttlM">基準価額</h5>
+</div>
+</div>
+<div class="floatR alR mgt3" style="width: 150px;">
+<p class="fs01">2015/02/13 現在</p>
+</div>
+</div>
+</div>
+
+
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04 mgt5" style="width:100%; margin-bottom:15px;">
+<tr>
+<th style="width:30%;"><div class="thM" style="text-align: center;"><p class="fm01">日付</p></div></th>
+<th style="width:40%;"><div class="thM" style="text-align: center;"><p class="fm01">基準価額</p></div></th><th style="border-right: none; width:30%;"><div class="thM" style="text-align: center;"><p class="fm01">前日比</p></div></th></tr>
+
+
+<tr><th><div class='thM' style="text-align: center;"><p class='fm01'>2015/02/13</p></div></th><td style="border-right: #cecdbf 1px solid;"><div class='tdM'><p class='fm01' style="text-align: right;">8,919円</p></div></td><td style="text-align: right;"><div class='tdM'><p class='fm01'><font color="red">+77円</font></p></div></td></tr>
+<tr><th><div class='thM' style="text-align: center;"><p class='fm01'>2015/02/12</p></div></th><td style="border-right: #cecdbf 1px solid;"><div class='tdM'><p class='fm01' style="text-align: right;">8,842円</p></div></td><td style="text-align: right;"><div class='tdM'><p class='fm01'><font color="blue">-68円</font></p></div></td></tr>
+<tr><th><div class='thM' style="text-align: center;"><p class='fm01'>2015/02/10</p></div></th><td style="border-right: #cecdbf 1px solid;"><div class='tdM'><p class='fm01' style="text-align: right;">8,910円</p></div></td><td style="text-align: right;"><div class='tdM'><p class='fm01'><font color="blue">-37円</font></p></div></td></tr>
+<tr><th><div class='thM' style="text-align: center;"><p class='fm01'>2015/02/09</p></div></th><td style="border-right: #cecdbf 1px solid;"><div class='tdM'><p class='fm01' style="text-align: right;">8,947円</p></div></td><td style="text-align: right;"><div class='tdM'><p class='fm01'><font color="red">+19円</font></p></div></td></tr>
+<tr><th><div class='thM' style="text-align: center;"><p class='fm01'>2015/02/06</p></div></th><td style="border-right: #cecdbf 1px solid;"><div class='tdM'><p class='fm01' style="text-align: right;">8,928円</p></div></td><td style="text-align: right;"><div class='tdM'><p class='fm01'><font color="blue">-61円</font></p></div></td></tr>
+
+</table>
+<div class="iLink01" style="margin-bottom:15px;">
+<p class="fm01"><a href="javascript:void window.open('https://site0.sbisec.co.jp/marble/fund/history/standardprice.do?fund_sec_code=22314144','pop6040_fund','width=740,height=720,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">過去データ</a></p>
+</div>
+
+<!--△△-->
+
+<!--▽▽-->
+<div class="floatClear">
+<div class="mgl10">
+
+<div class="floatL" style="width: 140px;">
+<div class="headSsBl01">
+<h5 class="ttlM">分配金実績</h5>
+</div>
+</div>
+<div class="floatR alR mgt3" style="width: 150px;">
+</div>
+</div>
+</div>
+
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" summary="layout" class="trTbl04 mgt5" style="width:100%; margin-bottom:15px;">
+<tr>
+<th style="width:50%;"><div class="thM alC"><p class="fm01">決算日</p></div></th>
+<th style="border-right: none;"><div class="thM alC"><p class="fm01">分配金</p></div></th>
+</tr>
+
+
+<tr><th><div class="thM alC"><p class="fm01">2015/02/04</p></div></th><td><div class="tdM alC"><p class="fm01">300円</p></div></td></tr>
+<tr><th><div class="thM alC"><p class="fm01">2015/01/05</p></div></th><td><div class="tdM alC"><p class="fm01">300円</p></div></td></tr>
+<tr><th><div class="thM alC"><p class="fm01">2014/12/04</p></div></th><td><div class="tdM alC"><p class="fm01">300円</p></div></td></tr>
+
+</table>
+
+
+<div class="iLink01" style="margin-bottom:15px;">
+<p class="fm01"><a href="javascript:void window.open('https://site0.sbisec.co.jp/marble/fund/history/distribution.do?fund_sec_code=22314144','pop6041_fund','width=740,height=720,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">過去データ</a></p>
+</div>
+
+<!--△△-->
+
+
+<!--△分配金実績-->
+
+
+<!--▽アセットアロケーション＆組入業種・地域-->
+                
+                
+
+
+<!--△アセットアロケーション＆組入業種・地域-->
+
+
+<!--▽組入銘柄TOP10-->
+                
+                
+<!--△組入銘柄TOP10-->
+
+
+</td>
+<!--△right-->
+</tr>
+
+
+</table>
+</div>
+<!--▲-->
+
+
+<!--▼レコメンド（他の人がチェックしたファンド）URL構築-->
+
+<!--▲レコメンド（他の人がチェックしたファンド）URL構築-->
+
+
+<!--▼ご注意事項-->
+                
+                <style type="text/css">
+<!--
+/* md-l-box- */
+.md-l-box-01 { padding-bottom: 2px; }
+.md-l-box-01 .md-l-box-01-inner { padding-top: 2px; *zoom: 1; }
+.md-l-box-01.md-l-mainarea-01.md-l-box-01-ie { background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-bg-box-01_780_b.gif) no-repeat 0 100%; }
+.md-l-box-01.md-l-mainarea-01.md-l-box-01-ie .md-l-box-01-inner { background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-bg-box-01_780_t.gif) no-repeat 0 0; }
+.md-l-box-01.md-l-mainarea-02.md-l-box-01-ie-s { background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-bg-box-01_580_b.gif) no-repeat 0 100%; }
+.md-l-box-01.md-l-mainarea-02.md-l-box-01-ie-s .md-l-box-01-inner { background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-bg-box-01_580_t.gif) no-repeat 0 0; }
+.md-l-box-01 .md-l-box-01-content { padding: 0 1px; background: #fafaea; border-right: #c9c96d 1px solid; border-left: #c9c96d 1px solid; *zoom: 1; }
+.md-l-box-01 h1, .md-l-box-01 h2, .md-l-box-01 h3, .md-l-box-01 h4, .md-l-box-01 h5, .md-l-box-01 h6 { padding: 6px 10px; background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-bg-box-01_m.gif) repeat-x 0 0; font-size: 14px; line-height: 1.1; }
+.md-l-box-01 h1 span, .md-l-box-01 h2 span, .md-l-box-01 h3 span, .md-l-box-01 h4 span, .md-l-box-01 h5 span, .md-l-box-01 h6 span { display: block; min-height: 16px; height: auto !important; height: 16px; padding-left: 24px; background: url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/md-l-ic-heading-01.gif) no-repeat 0 0; }
+.md-l-box-01 .md-l-box-01-content-inner { padding: 10px; font-size: 87.5%; line-height: 1.28; }
+.md-l-box-01 .md-l-box-01-content-inner h1, .md-l-box-01 .md-l-box-01-content-inner h2, .md-l-box-01 .md-l-box-01-content-inner h3, .md-l-box-01 .md-l-box-01-content-inner h4, .md-l-box-01 .md-l-box-01-content-inner h5, .md-l-box-01 .md-l-box-01-content-inner h6 { padding: 6px 10px; background: none; line-height: 1.5; }
+.md-l-box-01.md-l-mainarea-01 { width : 100%; }
+//-->
+</style>
+
+<!--▽ご注意事項-->
+<div class="md-l-box-01 md-l-mainarea-01 md-l-box-01-ie  md-l-utl-mt15">
+<div class="md-l-box-01-inner">
+<div class="md-l-box-01-content">
+<h3><span>ご注意事項</span></h3>
+<div class="md-l-box-01-content-inner">
+<ul class="md-l-list-01">
+<li>投資信託は、主に国内外の株式や債券等を投資対象としています。投資信託の基準価格は、組み入れた株式や債券等の値動き、為替相場の変動等により上下しますので、これにより投資元本を割り込むおそれがあります。</li>
+<li>投資信託は、個別の投資信託毎にご負担いただく手数料等の費用やリスクの内容や性質が異なります。ファンド・オブ・ファンズの場合は、他のファンドを投資対象としており、投資対象ファンドにおける所定の信託報酬を含めてお客様が実質的に負担する信託報酬を算出しております（投資対象ファンドの変更等により、変動することがあります）。</li>
+<li>ご投資にあたっては、目論見書や契約締結前交付書面をよくお読みください。</li>
+<li>主要投資対象とする投資信託証券の申込み・解約及び換金の停止ならびに基準価額算出の中止、取引所における取引の停止等その他やむを得ない事情があると委託会社等が判断したときは、購入・換金の受付を中止すること、及び既に受付けた当該申込みの受付及び約定を取り消す場合がございます。再度のご注文をご希望のお客様は、改めてご注文をご発注ください。</li>
+</ul>
+
+<!--/.md-l-box-01-content-inner --></div>
+<!--/.md-l-box-01-content--></div>
+<!--/.md-l-box-01-inner --></div>
+<!--/.md-l-box-01 --></div>
+<!--△ご注意事項-->
+
+<!--▲ご注意事項-->
+
+
+<!--▼-->
+<div class="mgt20">
+<ul class="liNote01">
+<li class="fm01">※モーニングスター（MS）レポート＆ファンド情報、基準価額&純資産履歴、アセットアロケーション&組入れ業種・地域および組入銘柄TOP10は<a href="http://www.morningstar.co.jp/" target="_blank">モーニングスター社</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/i_popup_02.gif" width="16" height="11" border="0" alt="新しいウィンドウで開きます。" title="新しいウィンドウで開きます。" class="vaM">の提供です。</li>
+</ul>
+</div>
+<!--▲-->
+
+
+                            <!--△画面固有部2-->
+
+                    </form>
+           </div>
+         </td>
+      <!--▲table-left:1-->
+
+      <!--▼table-right:1-->
+                    <td class="loSpace"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/trans.gif" width="15" height="1" alt=""></td>
+                      <td class="loSide">
+                        <div id="side">
+                        
+                        
+<!--▽右側部品1-->
+
+<!--▽ビジター-->
+        <!--▽ブリテンメッセージ-->
+        
+
+
+
+
+
+
+
+        <!--△ブリテンメッセージ-->
+        <!--▽口座開設のご案内-->
+        
+<!--▽口座開設のご案内-->
+
+
+
+
+<!--visitor-->
+
+
+<div class="mboxDefault">
+<div id="RT_homepb_nisa_001">
+
+
+<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-01.gif" alt="口座をお持ちでない方へ" width="175" height="33"></h2>
+<div class="sb-box-sub-01">
+<div class="sb-box-sub-01-inner">
+<div class="sb-box-sub-01-content">
+<p class="sb-position-c"><strong><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/text-sub-01.gif" alt="口座開設料・口座管理料0円" width="151" height="16"></strong></p>
+<p class="sb-position-c"><a href="https://m.sbisec.co.jp/eatiw011" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/btn-sub-account.gif" alt="今すぐ口座開設" width="152" height="52"></a></p>
+<p class="sb-list-sub-01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=service&amp;dir=service&amp;file=home_sogoaccount_hojinunderage.html">法人・未成年の口座開設</a></p>
+<p class="sb-position-c"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=begin&amp;dir=info&amp;file=home_merit.html" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/btn-sub-beginner.gif" alt="はじめての方へ" width="151" height="33"></a></p>
+<p class="sb-list-sub-01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_home&cat1=home&cat2=service&dir=service&file=home_syoukai.html">ご家族・お友達のご紹介</a></p>
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+</div>
+<script type="text/javascript">if(typeof mboxCreate != 'undefined') mboxCreate('sbisec_pc_visitor_right_banner');</script>
+
+
+<!--△口座開設のご案内-->
+        <!--△口座開設のご案内-->
+        <!--▽ログインボックス-->
+        
+
+<script language="JavaScript" type="text/javascript" src="/JavaScript/keyboard.js"></script>
+<link rel="stylesheet" href="/css/keyboard.css?20130615" type="text/css" title="keyboard">
+
+<Script language="JavaScript">
+  function changeNWEBFLG() {
+    changeJSFLG();
+    changeBWFLG();
+  }
+
+  function changeBWFLG() {
+    var lv_userAgent;
+    var lv_version;
+    var lv_temp;
+    
+    if (navigator.userAgent == null || navigator.userAgent == "") {
+      lv_userAgent = "no";
+    } else {
+      lv_userAgent = navigator.userAgent.toLowerCase();
+    }
+    
+    if (window.ActiveXObject) {
+      lv_temp = lv_userAgent.match(/msie ([\d.]+)/);
+      if (lv_temp) {
+        lv_version = "ie," + parseFloat(lv_temp[1]);
+      } else {
+        lv_version = "ie,NaN";
+      }
+    } else if (document.getBoxObjectFor) {
+      if (lv_userAgent.search(/firefox/) >= 0) {
+        lv_temp = lv_userAgent.match(/firefox\/([\d.]+)/);
+        if (lv_temp) {
+          lv_version = "firefox," + parseFloat(lv_temp[1]);
+        } else {
+          lv_version = "firefox,NaN";
+        }
+      } else if (lv_userAgent.search(/netscape/) >= 0) {
+        lv_temp = lv_userAgent.match(/netscape\/([\d.]+)/);
+        if (lv_temp) {
+          lv_version = "netscape," + parseFloat(lv_temp[1]);
+        } else {
+          lv_version = "netscape,NaN";
+        }
+      } else {
+        lv_version = "other,NaN";
+      }
+    } else if (window.MessageEvent && !document.getBoxObjectFor) {
+      lv_temp = lv_userAgent.match(/chrome\/([\d.]+)/);
+      if (lv_temp) {
+        lv_version = "chrome," + parseFloat(lv_temp[1]);
+      } else {
+        lv_version = "chrome,NaN";
+      }
+    } else if (window.opera) {
+      lv_temp = lv_userAgent.match(/opera.([\d.]+)/);
+      if (lv_temp) {
+        lv_version = "opera," + parseFloat(lv_temp[1]);
+      } else {
+        lv_version = "opera,NaN";
+      }
+    } else if (lv_userAgent.indexOf('applewebkit/') > -1 &&
+               lv_userAgent.indexOf('safari/') > -1) {
+      lv_temp = lv_userAgent.match(/version\/([\d.]+)/);
+      if (lv_temp) {
+        lv_version = "safari," + parseFloat(lv_temp[1]);
+      } else {
+        lv_temp = lv_userAgent.match(/safari\/([\d.]+)/);
+        if (lv_temp && parseFloat(lv_temp[1]) >= 400) {
+          lv_version = "safari,2";
+        } else {
+          lv_version = "safari,NaN";
+        }
+      }
+    } else {
+        lv_version = "other,NaN";
+    }
+    document.getElementById("BW_FLG").value = lv_version;
+  }
+
+  function changeJSFLG() {
+    var lv_AjaxFlg = true;
+    var lv_obj = null;
+
+    try {
+      lv_obj = new XMLHttpRequest();
+    } catch(e) {
+      lv_AjaxFlg = false;
+    }
+
+    if (lv_AjaxFlg == false) {
+      try {
+        lv_obj = new ActiveXObject('Msxml2.XMLHTTP');
+        lv_AjaxFlg = true;
+      } catch(e) {
+        lv_AjaxFlg = false;
+      }
+    }//else{}
+
+    if (lv_AjaxFlg == false) {
+      try {
+        lv_obj = new ActiveXObject('Microsoft.XMLHTTP');
+        lv_AjaxFlg = true;
+      } catch(e) {
+        lv_AjaxFlg = false;
+      }
+    }//else{}
+
+    if (lv_AjaxFlg) {
+      document.getElementById("JS_FLG").value = "1";
+    }//else {}
+  }
+</Script>
+
+<SCRIPT type="text/javascript">
+<!--
+function enterpress(){
+   if(window.event.keyCode == 13){
+
+   	 changeNWEBFLG();
+
+   }
+}
+// -->
+</SCRIPT>
+
+
+<form name="form_login" method="post" action='/ETGate/' class="margin-4">
+
+<INPUT TYPE='hidden' name='JS_FLG' id='JS_FLG' value='0'>
+<INPUT TYPE='hidden' name='BW_FLG' id='BW_FLG' value='0'>
+
+	<INPUT TYPE='hidden' name='_ControlID' value='WPLETlgR001Control'>
+	<INPUT TYPE='hidden' name='_DataStoreID' value='DSWPLETlgR001Control'>
+	
+	    <INPUT TYPE='hidden' name='_PageID' value='WPLETlgR001Rlgn20'>
+	    <INPUT TYPE='hidden' name='_ActionID' value='login'>
+	
+	<INPUT TYPE='hidden' name='getFlg' value='on'>
+	<INPUT TYPE='hidden' name='allPrmFlg' value='on'>
+	
+	
+	
+        <INPUT TYPE="hidden" name="_ReturnPageInfo" value="WPLETfiR001Control/WPLETfiR001Idtl11/DefaultAID/DSWPLETfiR001Control">
+        
+
+
+<INPUT TYPE='hidden' name='getFlg' value='on'>
+<INPUT TYPE='hidden' name='fund_sec_code' value='122314144'>
+
+
+
+
+
+<!--▼Visitor ログイン-->
+	<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-02.gif" width="175" height="33" alt="お客様サイトへログイン" title="お客様サイトへログイン"></h2>
+	<div class="sb-box-sub-02">
+	<div class="sb-box-sub-02-inner">
+	<div class="sb-box-sub-02-content">
+		<dl>
+			<dt>ユーザーネーム</dt>
+			<dd><div id="user_input"><input type="text" name="user_id" value=""  onKeyPress="enterpress();" onfocus=Monc("UI")></div></dd>
+			<dt>パスワード</dt>
+			<dd><div id="password_input"><input type="password" name="user_password" maxlength="10" value=""  onKeyPress="enterpress();" onfocus=Monc("PW") ></div></dd>
+		</dl>
+		<p class="sb-list-sub-02" id="kb_block"><span id="kbicon" ><a href="javascript:void(0)" onclick="GetkbPosition(1);return false;">セキュリティキーボード</a></span></p>
+		<p class="sb-position-c"><a onmouseout="revSetOutAction(this);" onmouseover="revSetOverAction(this);"><input type="image" src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/btn-sub-login.gif" name="ACT_login" alt="ログイン" title="ログイン" class="ov" width="152" height="42" onclick="changeNWEBFLG();"></a></p>
+		<p class="sb-list-sub-03"><a href="/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_home&cat1=home&cat2=none&dir=info&file=home_loginpassword.html">パスワードをお忘れの場合</a></p>
+	<!--/.sb-box-sub-02-content --></div>
+	<!--/.sb-box-sub-02-inner --></div>
+	<!--/.sb-box-sub-02 --></div>
+
+
+<script type="text/javascript">
+function SystemRedirect(){
+ var UserAgent = navigator.userAgent.toLowerCase();
+ var IsntMsie = UserAgent.indexOf("msie")==-1; 
+ var IsntChrome = UserAgent.indexOf("chrome")==-1;
+ var IsntFireFox = UserAgent.indexOf("firefox")==-1;
+ var IsntSafari = UserAgent.indexOf("safari")==-1;
+ var IsIpad = UserAgent.indexOf("ipad")!=-1; 
+ var IsIphone = UserAgent.indexOf("iphone")!=-1;
+ var IsAndroid = UserAgent.indexOf("android")!=-1;
+ var IsWindows = UserAgent.indexOf("windows")!=-1;
+ 
+ if((IsIpad || IsIphone || IsAndroid) || (IsntMsie && IsntChrome && IsntFireFox && IsntSafari)){
+  document.getElementById("user_input").innerHTML= '<input type="text" name="user_id" value=""  onKeyPress="enterpress();">';
+  document.getElementById("password_input").innerHTML = '<input type="password" name="user_password" maxlength="10" value=""  onKeyPress="enterpress();">';
+  document.getElementById("kb_block").style.display = "none";
+ }
+}
+SystemRedirect();
+</script>
+
+
+<!--▲Visitor ログイン-->
+</form>
+
+<DIV id='iL4' CLASS="img-shadow"></DIV>
+<DIV id='iL0' CLASS="Style1"></DIV>
+<DIV id='iL1' CLASS="Style1"></DIV>
+<DIV id='iL2' CLASS="Style1"></DIV>
+<DIV id='iL3' CLASS="Style1"></DIV>
+<DIV id='jL0' CLASS="area2"></DIV>
+<DIV id='jL1' CLASS="area2"></DIV>
+<DIV id='jL2' CLASS="area2"></DIV>
+<DIV id='jL3' CLASS="area2"></DIV>
+<DIV id='jL4' CLASS="area2"></DIV>
+<DIV id='jL5' CLASS="area2"></DIV>
+<DIV id='jL6' CLASS="area2"></DIV>
+<DIV id='jL7' CLASS="area2"></DIV>
+<DIV id='jL8' CLASS="area2"></DIV>
+<DIV id='jL9' CLASS="area2"></DIV>
+<DIV id='jL10' CLASS="area2"></DIV>
+<DIV id='jL11' CLASS="area2"></DIV>
+<DIV id='jL12' CLASS="area2"></DIV>
+<DIV id='jL13' CLASS="area2"></DIV>
+<DIV id='jL14' CLASS="area2"></DIV>
+<DIV id='jL15' CLASS="area2"></DIV>
+<DIV id='jL16' CLASS="area2"></DIV>
+<DIV id='jL17' CLASS="area2"></DIV>
+<DIV id='jL18' CLASS="area2"></DIV>
+<DIV id='jL19' CLASS="area2"></DIV>
+<DIV id='jL20' CLASS="area2"></DIV>
+<DIV id='jL21' CLASS="area2"></DIV>
+<DIV id='jL22' CLASS="area2"></DIV>
+<DIV id='jL23' CLASS="area2"></DIV>
+<DIV id='jL24' CLASS="area2"></DIV>
+<DIV id='jL25' CLASS="area2"></DIV>
+<DIV id='jL26' CLASS="area2"></DIV>
+<DIV id='jL27' CLASS="area2"></DIV>
+<DIV id='jL28' CLASS="area2"></DIV>
+<DIV id='jL29' CLASS="area2"></DIV>
+<DIV id='jL30' CLASS="area2"></DIV>
+<DIV id='jL31' CLASS="area2"></DIV>
+<DIV id='jL32' CLASS="area2"></DIV>
+<DIV id='jL33' CLASS="area2"></DIV>
+<DIV id='jL34' CLASS="area2"></DIV>
+<DIV id='jL35' CLASS="area2"></DIV>
+<DIV id='jL36' CLASS="area2"></DIV>
+<DIV id='jL37' CLASS="area2"></DIV>
+<DIV id='jL38' CLASS="area2"></DIV>
+<DIV id='jL39' CLASS="area2"></DIV>
+<DIV id='jL40' CLASS="area2"></DIV>
+<DIV id='jL41' CLASS="area2"></DIV>
+<DIV id='jL42' CLASS="area2"></DIV>
+<DIV id='jL43' CLASS="area2"></DIV>
+<DIV id='jL44' CLASS="area2"></DIV>
+<DIV id='jL45' CLASS="area2"></DIV>
+<DIV id='jL46' CLASS="area2"></DIV>
+<DIV id='jL47' CLASS="area2"></DIV>
+<DIV id='jL48' CLASS="area2"></DIV>
+<DIV id='jL49' CLASS="area2"></DIV>
+<DIV id='jL50' CLASS="area2"></DIV>
+<DIV id='jL51' CLASS="area2"></DIV>
+<DIV id='jL52' CLASS="area2"></DIV>
+<DIV id='jL53' CLASS="area2"></DIV>
+<DIV id='jL54' CLASS="area2"></DIV>
+<DIV id='jL55' CLASS="area2"></DIV>
+<DIV id='jL56' CLASS="area2"></DIV>
+<DIV id='jL57' CLASS="area2"></DIV>
+<DIV id='jL58' CLASS="area2"></DIV>
+<DIV id='jL59' CLASS="area2"></DIV>
+<DIV id='jL60' CLASS="area2"></DIV>
+<DIV id='jL61' CLASS="area2"></DIV>
+<DIV id='jL62' CLASS="area2"></DIV>
+<DIV id='jL63' CLASS="area2"></DIV>
+<DIV id='jL64' CLASS="area2"></DIV>
+<DIV id='jL65' CLASS="area2"></DIV>
+<DIV id='jL66' CLASS="area2"></DIV>
+<DIV id='jL67' CLASS="area2"></DIV>
+<DIV id='jL68' CLASS="area2"></DIV>
+<DIV id='jL69' CLASS="area2"></DIV>
+<DIV id='jL70' CLASS="area2"></DIV>
+<DIV id='jL71' CLASS="area2"></DIV>
+<DIV id='jL72' CLASS="area2"></DIV>
+<DIV id='jL73' CLASS="area2"></DIV>
+<DIV id='jL74' CLASS="area2"></DIV>
+<DIV id='jL75' CLASS="area2"></DIV>
+<DIV id='jL76' CLASS="area2"></DIV>
+<DIV id='jL77' CLASS="area2"></DIV>
+<DIV id='jL78' CLASS="area2"></DIV>
+<DIV id='jL79' CLASS="area2"></DIV>
+<DIV id='jL80' CLASS="area2"></DIV>
+<DIV id='jL81' CLASS="area2"></DIV>
+<DIV id='jL82' CLASS="area2"></DIV>
+<DIV id='jL83' CLASS="area2"></DIV>
+<DIV id='jL84' CLASS="area2"></DIV>
+<DIV id='jL85' CLASS="area2"></DIV>
+<DIV id='jL86' CLASS="area2"></DIV>
+<DIV id='jL87' CLASS="area2"></DIV>
+<DIV id='jL88' CLASS="area2"></DIV>
+<DIV id='jL89' CLASS="area2"></DIV>
+<DIV id='jL90' CLASS="area2"></DIV>
+<DIV id='jL91' CLASS="area2"></DIV>
+<DIV id='jL92' CLASS="area2"></DIV>
+<DIV id='jL93' CLASS="area2"></DIV>
+
+        <!--△ログインボックス-->
+<!--△ビジター-->
+
+<!--△右側部品1-->
+                        
+                        
+                        
+
+
+
+
+
+<!--▼ご注意事項-->
+<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-11.gif" alt="ご注意事項" width="175" height="32"></h2>
+<div class="sb-box-sub-05">
+<div class="sb-box-sub-05-inner">
+
+<ul>
+
+<li class="sb-window-01"><a href="javascript:void window.open('http://search.sbisec.co.jp/v2/popwin/attention/trading/fund_01.html','trading','width=580,height=480,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">投資信託 お取引注意事項</a></li>
+
+</ul>
+
+</div>
+</div>
+<!--▲ご注意事項-->
+
+
+
+
+
+
+
+
+
+<!--▼ヘルプ-->
+<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-12.gif" alt="ヘルプ" width="175" height="32"></h2>
+<div class="sb-box-sub-06">
+<div class="sb-box-sub-06-inner">
+<ul>
+
+
+<li class="sb-window-01"><a href="javascript:void(0);" onClick="openHelp('http://search.sbisec.co.jp/v2/popwin/help/invest_05_01.html')" onKeypress="openHelp('http://search.sbisec.co.jp/v2/popwin/help/invest_05_01.html')">投信情報について</a></li>
+
+
+<li class="sb-window-01"><a href="javascript:void(0);" onClick="openHelp('http://search.sbisec.co.jp/v2/popwin/help/trade_fund_01_01.html')" onKeypress="openHelp('http://search.sbisec.co.jp/v2/popwin/help/trade_fund_01_01.html')">投資信託注文ルール</a></li>
+
+
+
+</ul>
+</div>
+</div>
+<!--▲ヘルプ-->
+
+
+
+
+
+
+
+<!--▽検索結果-->
+
+
+<style type="text/css">
+<!--
+#side .fundkensakuBox01 {width: 175px; margin-bottom: 10px; padding-bottom: 5px; border-bottom: solid 1px #d2d2d2; background: #f7f7f7 url(https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/bg_side_tool_01.gif) repeat-x;}
+* html #side .fundkensakuBox01 {padding-bottom: 3px;}
+#side .fundkensakuBox01 h2 {width: 169px; margin-left: 2px; padding: 8px 0 3px 0; font-weight: bold;}
+#side .fundkensakuBox01 h2 p {display: block; min-height: 13px; padding: 1px 0 0 6px;}
+* html #side .fundkensakuBox01 h2 p {height: 13px;}
+#side .fundkensakuBox01 .fundList01 {width: 165px; margin: 0 0 0 6px;}
+#side .fundkensakuBox01 .fundList01 ul li p {padding: 4px 0 4px 0; border-top: solid 1px #e0e0e0;text-indent: -1.2em;padding-left: 1.2em;}
+* html #side .fundkensakuBox01 .fundList01 ul li p {width: 165px;}
+#side .fundkensakuBox01 .fundList01 ul li p {font-size: 100%;}
+//-->
+</style>
+<div class="fundkensakuBox01">
+<h2><p class="fm01">検索結果&nbsp;&nbsp;<span class="normal smaller02">1-5件/1862件中</span></p></h2>
+
+<!--↓-->
+
+<div class="floatClear" style="padding:0 0 3 0; width: 163px; margin: 0 0 0 6px;">
+
+
+<div class="floatR alR" style="width:60;">
+<p class="fm01"><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=122314144&amp;ref_from1=6&amp;ref_to1=10">次へ→</a></p>
+</div>
+
+</div>
+<!--↑-->
+<div class="fundList01">
+<ul>
+
+                <li><p>1.&nbsp;<a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=23331113A&amp;ref_from1=00001&amp;ref_to1=00005">ＢＡＭ－ＢＡＭワールド・ボンド＆カレンシ...</a></p></li>
+               
+                <li><p>2.&nbsp;<a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=233311963&amp;ref_from1=00001&amp;ref_to1=00005">ＢＡＭ－アジア製造業ファンド</a></p></li>
+               
+                <li><p>3.&nbsp;<a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=233311079&amp;ref_from1=00001&amp;ref_to1=00005">ＢＡＭ－アジア製造業ファンド（３ヶ月決算...</a></p></li>
+               
+                <li><p>4.&nbsp;<a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=233311078&amp;ref_from1=00001&amp;ref_to1=00005">ＢＡＭ－ベアリング欧州株ファンド</a></p></li>
+               
+                <li><p>5.&nbsp;<a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=233311984&amp;ref_from1=00001&amp;ref_to1=00005">ＢＡＭ－ワールド・ボンド＆カレンシー・フ...</a></p></li>
+               
+</ul>
+</div>
+<!--↓-->
+<div class="floatClear" style="padding:3 0 0 0; width: 163px; margin: 0 0 0 6px; border-top: solid 1px #e0e0e0;">
+
+
+<div class="floatR alR" style="width:60;">
+<p class="fm01"><a href="/ETGate/?_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Idtl11&amp;goBack_PageID=&amp;_DataStoreID=DSWPLETfiR001Control&amp;getFlg=on&amp;_ActionID=DefaultAID&amp;search_name=&amp;sec_id=&amp;ref_from=00001&amp;ref_to=00020&amp;et_category=&amp;sort_key=00&amp;sort_kbn=1&amp;s_rflg=&amp;fund_sec_code=122314144&amp;ref_from1=6&amp;ref_to1=10">次へ→</a></p>
+</div>
+
+</div>
+<!--↑-->
+
+</div>
+<!--△検索結果-->
+
+
+
+
+
+
+
+
+<!--visitor-->
+
+<!-- フルパスで -->
+
+
+<!--▼投資情報-->
+<div class="sb-fund-info-01">
+<div class="sb-fund-info-01-inner-01">
+<div class="sb-fund-info-01-inner-02">
+<h2>ファンドの投資情報</h2>
+<div class="sb-fund-info-01-linklist-01">
+<ul>
+
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=fund_invest.html">ご提供している投資情報</a></li>
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_home&cat1=home&cat2=learn&dir=learn&file=home_payoff.html">貯蓄から投資へ</a></li>
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_home&cat1=home&cat2=learn&dir=learn&file=home_lecture_fund.html">投資信託基礎講座</a></li>
+
+<li class="sb-fund-info-01-linklist-01-external"><a href="http://www.nomura-am.co.jp/glossary/etrade/index.php" target="_blank">投資信託用語集</a></li>
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=fund_bunrui_fd.html">ファンドの分類</a></li>
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=fund_mikata_pros.html">目論見書の見方</a></li>
+
+<li class="sb-fund-info-01-linklist-01-external"><a href="javascript:void window.open('http://search.sbisec.co.jp/v2/popwin/info/fund/pop6040_fund_closed.html','pop6040_fund_closed','width=640,height=580,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">投信休場日カレンダー</a></li>
+
+<li class="sb-fund-info-01-linklist-01-external"><a href="javascript:void(0);" onClick="window.open('http://search.sbisec.co.jp/v2/popwin/info/stock/pop6040_mmf_closed.html','pop6040_mmf_closed','width=640,height=580,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">外貨建MMF休場日カレンダー</a></li>
+
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<!--▲投資情報-->
+
+
+
+
+
+<!--▼商品・サービスのご案内-->
+<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-13.gif" alt="商品・サービスのご案内" width="175" height="31"></h2>
+<div class="sb-box-sub-04">
+<div class="sb-box-sub-04-inner">
+<div class="sb-box-sub-04-content">
+<ul class="sb-list-sub-05">
+
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_fund&amp;cat1=fund&amp;cat2=none&amp;dir=info&amp;file=comment/fund_comment_140731.html&int_pr1=140731_fund_prodtop_bn_04"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/banner/bnr165_fund_infra140731.gif" width="165" height="75" alt="高まるインフラ需要！注目集まる好配当インフラ株式ファンド"></a></li>
+
+
+
+
+
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=comment/fund_comment_120302.html&int_pr1=140626_fund_prodtop_bn_02"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/banner/bnr165_fund140626.gif" width="165" height="75" alt="ブル・ベアファンド特集"></a></li>
+
+
+<li><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=comment/fund_comment_140529.html
+&int_pr1=140731_fund_prodtop_bn_05"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/banner/bnr165_highyield_140731.gif" width="165" height="75" alt="好利回りが魅力の世界のハイ・イールド債券投信！"></a></li>
+
+
+
+
+
+</ul>
+</div>
+</div>
+</div>
+<!--▲商品・サービスのご案内-->
+
+<!--バナー▽▽▽ネットでNISAフォーラム-->
+<div style="padding-bottom:9px;">
+<a href="http://r.advg.jp/adptg_count/r?adptg_aid=2044&adptg_mid=285&adptg_lid=36" target="_blank"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/banner/bnr175x66_nisa2015_17967.jpg" width="175" height="66" alt="ネットでNISAフォーラムinTokyo"></a>
+</div>
+<!--バナー△△△ネットでNISAフォーラム-->
+
+
+
+
+
+<!--▼PR-->
+<h2><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/heading-sub-14.gif" alt="PR" width="175" height="32"></h2>
+<div class="sb-box-sub-07">
+<div class="sb-box-sub-07-inner">
+
+<ul>
+<li class="sb-window-01"><a href="http://indexfund.nomura-am.co.jp/sbisec/" target="_blank">野村インデックスFシリーズ「Ｆｕｎｄｓ－ｉ」</a><p>提供：野村アセットマネジメント</p></li>
+
+
+
+
+<li class="sb-window-01"><a href="http://emaxis.muam.jp/sbisec/index.html" target="_blank">買付手数料0円のeMAXIS「国内物価連動国債インデックス」新規追加！</a><p>提供：三菱UFJ投信</p></li>
+
+
+
+
+
+<li class="sb-window-01"><a href="http://www.smtam.jp/special/smt_index_sbi/" target="_blank">SMTインデックスシリーズ</a><p>提供：三井住友トラスト・アセットマネジメント</p></li>
+
+<li class="sb-window-01"><a href="http://www.sbiam.co.jp/EXE-i_sbisec/" target="_blank">EXE-iシリーズ</a><p>提供：ＳＢＩアセットマネジメント<br><a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=comment/fund_comment_130408_01.html">お申込はこちら</a></p></li>
+
+<li>－ご参考資料－<br>
+<a href="https://www.sbisec.co.jp/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_fund&cat1=fund&cat2=none&dir=info&file=comment/fund_comment_140127.html">「マニュライフ・インベストメンツ」 代表ファンドの運用報告動画</a><p>提供：マニュライフ・インベストメンツ</p></li>
+
+<li class="sb-window-01"><a href="http://schroders.co.jp/sbi/index.html" target="_blank">シュローダーが語る「時代に負けない運用とは？」</a><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/status-06.gif" alt="NEW!" class="tp-status-01" width="29" height="16">
+<p>提供：シュローダー・インベストメント・マネジメント株式会社</p></li>
+
+
+
+
+
+</ul>
+
+</div>
+</div>
+<!--▲PR-->
+
+
+<!--▼-->
+<div class="sb-bnr-sub-01">
+<ul>
+
+
+<li><a href="http://www.morningstar.co.jp/advms/statistics/click.asp?c_cd=00002632&link_no=1" target="_blank"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base/g_morningstar_app.gif" width="175" height="36" alt="モーニングスター スマートフォンアプリ「株・投信情報」"></a></li>
+
+
+
+<li><a href="http://contest.muam.jp/sbisec/030988/" target="_blank"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/banner/bnr_side_fund_140930.jpg" width="175" height="50" alt="「ポートフォリオの達人」"></a></li>
+
+
+
+</ul>
+</div>
+<!--▲-->
+
+
+
+
+<!-- Google Code for &#9632;&#25237;&#20449; Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1048032758;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "P5AtCKqt7QIQ9uve8wM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/1048032758/?value=0&amp;label=P5AtCKqt7QIQ9uve8wM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+
+<br>
+
+
+
+                        
+                        </div>
+                      </td>
+      </tr>
+    </table>
+  </div>
+</div>
+      <!--▲table-right:1-->
+
+<script language="JavaScript" type="text/javascript">
+sc_c7 = "投信:222314144";
+</script>
+      <!--▼footer-->
+      
+
+
+
+
+<div align="center">
+    
+      
+
+
+<!--visitor-->
+
+
+
+
+<!--▼PAGETOP▼-->
+<div id="PAGETOP01">
+<p><a href="#PAGETOP" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_b_pagetop.gif" alt="ページトップへ" title="ページトップへ" width="175" height="31"></a></p>
+</div>
+<!--▲PAGETOP▲-->
+
+
+
+<!--▼FOOTER01▼-->
+<div id="FOOTER01">
+<div id="footer01P" class="floatClear">
+
+
+<!--▽01-->
+<div class="footer01M">
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLEThmR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLEThmR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">ホーム</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=begin&amp;dir=info&amp;file=home_merit.html">はじめての方へ</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=price&amp;dir=price&amp;file=home_price.html">手数料</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=lineup&amp;dir=lineup%2F&amp;file=home_lineup.html&amp;getFlg=on">取扱商品</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=search_home&amp;cat1=home&amp;cat2=tool&amp;dir=tool%2F&amp;file=home_tool.html&amp;getFlg=on&amp;OutSide=on">取引ツール</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=service&amp;dir=service&amp;file=home_service.html">サービス案内</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=campaign&amp;dir=campaign%2F&amp;file=home_campaign.html&amp;getFlg=on">キャンペーン</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=corporate&amp;dir=corporate&amp;file=home_corporate.html">会社情報</a></li>
+</ul>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_top&amp;cat1=market&amp;cat2=top&amp;dir=tl1-top%7Ctl2-map%7Ctl5-jpn&amp;file=index.html&amp;getFlg=on">マーケット</a></p>
+</div>
+<ul class="liLinkNavy01">
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_index&amp;cat1=market&amp;cat2=index&amp;dir=tl1%2didx%7ctl2%2dstockIdx&amp;file=index.html&amp;getFlg=on">指数・為替・金利</a></li>
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_ranking&amp;cat1=market&amp;cat2=ranking&amp;dir=tl1%2drnk%7ctl2%2dstock%7ctl3%2dprice%7ctl4%2duprate%7ctl5%2dpriceview%7ctl7%2dT1&amp;file=index.html&amp;getFlg=on">ランキング</a></li>
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_economicCalendar&amp;cat1=market&amp;cat2=economicCalender&amp;dir=tl1%2dcal%7ctl2%2devent%7ctl3%2dweek&amp;file=index.html&amp;getFlg=on">経済カレンダー</a></li>
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_report&amp;cat1=market&amp;cat2=report&amp;dir=tl1%2drpt&amp;file=index.html&amp;getFlg=on">レポート</a></li>
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_morningInfo&amp;cat1=market&amp;cat2=morningInfo&amp;dir=tl1%2dminfo%7ctl2%2dminfo&amp;file=index.html&amp;getFlg=on">朝イチ情報</a></li>
+
+<li class="fm01"><a href="/ETGate/?_ControlID=WPLETmgR001Control&amp;_PageID=WPLETmgR001Mdtl20&amp;_DataStoreID=DSWPLETmgR001Control&amp;_ActionID=DefaultAID&amp;burl=iris_news&amp;cat1=market&amp;cat2=news&amp;dir=tl1%2dnews%7ctl2%2dmkt%7ctl3%2djpn%7ctl4%2dreuters%7ctl9%2d0&amp;file=index.html&amp;getFlg=on">ニュース</a></li>
+
+</ul>
+</div>
+<!--↑-->
+
+</div>
+<!--△01-->
+
+<!--▽02-->
+<div class="footer01M">
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/WPLETsiR001Control/WPLETsiR001Iser10/DefaultAID?OutSide=on&amp;getFlg=on">国内株式</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_domestic&amp;cat1=domestic&amp;cat2=spot&amp;dir=spot&amp;file=domestic_spot_01.html">現物</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_domestic&amp;cat1=domestic&amp;cat2=margin&amp;dir=margin&amp;file=domestic_margin_01.html">信用</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_domestic&amp;cat1=domestic&amp;cat2=pts&amp;dir=pts&amp;file=domestic_pts_01.html">PTS</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_domestic&amp;cat1=domestic&amp;cat2=ipo&amp;dir=ipo&amp;file=stock_info_ipo.html">新規上場株式 公募増資・売出</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_domestic&amp;cat1=domestic&amp;cat2=offfloor&amp;dir=offfloor&amp;file=domestic_offfloor_01.html">立会外分売</a></li>
+
+
+</ul>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETusR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETusR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">外国株式</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/WPLETfiR001Control/WPLETfiR001Iser10/DefaultAID?OutSide=on&amp;getFlg=on">投資信託</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=offering%2F&amp;file=fund_offering_top.html&amp;cat1=fund&amp;cat2=offering&amp;getFlg=on">新規取扱投資信託</a></li>
+
+
+
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;OutSide=on&amp;getFlg=on&amp;burl=search_fund&amp;cat1=fund&amp;cat2=save&amp;dir=info%2F&amp;file=fund_tsumitate.html">投信積立</a></li>
+
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fund&amp;dir=edeliv%2F&amp;file=fund_edeliv_01.html&amp;cat1=fund&amp;cat2=lineup&amp;getFlg=on">取扱投資信託一覧</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Clst10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">委託会社一覧</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETfiR001Control&amp;_PageID=WPLETfiR001Mlst10&amp;_DataStoreID=DSWPLETfiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">外貨建MMF</a></li>
+
+</ul>
+</div>
+<!--↑-->
+
+</div>
+<!--△02-->
+
+<!--▽03-->
+<div class="footer01M">
+
+
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/WPLETbiR001Control/WPLETbiR001Slst10/DefaultAID?OutSide=on&amp;getFlg=on">債券</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_bond&amp;cat1=bond&amp;cat2=japan&amp;dir=japan&amp;file=bond_domestic.html">円貨建債券</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_bond&amp;cat1=bond&amp;cat2=foreign&amp;dir=foreign&amp;file=bond_foreign.html
+">外貨建債券</a></li>
+</ul>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETfxR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETfxR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">外国為替保証金取引（FX）</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fx&amp;dir=service%2F&amp;file=fx_service.html&amp;cat1=fx&amp;cat2=service&amp;getFlg=on">サービス概要</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fx&amp;dir=flow%2F&amp;file=fx_flow.html&amp;cat1=fx&amp;cat2=flow&amp;getFlg=on">口座開設・お取引までの流れ</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_fx&amp;dir=guide%2F&amp;file=fx_guide.html&amp;cat1=fx&amp;cat2=guide&amp;getFlg=on">外国為替保証金取引（FX）とは</a></li>
+</ul>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETopR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETopR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">先物・オプション取引</a></p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_op&amp;cat1=op&amp;cat2=service&amp;dir=service%2F&amp;file=op_service.html&amp;getFlg=on">サービス概要</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_op&amp;cat1=op&amp;cat2=flow&amp;dir=flow%2F&amp;file=op_flow.html&amp;getFlg=on">口座開設・お取引までの流れ</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_op&amp;cat1=op&amp;cat2=guide&amp;dir=guide%2F&amp;file=op_guide.html&amp;getFlg=on">先物・オプション取引とは</a></li>
+</ul>
+</div>
+<!--↑-->
+
+</div>
+<!--△03-->
+
+<!--▽04-->
+<div class="footer01M">
+
+
+
+
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETdiR001Control&amp;_PageID=WPLETcwR001Mlst10&amp;_DataStoreID=DSWPLETdiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">カバードワラント</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETniR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETniR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">NISA（ニーサ）</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETbkR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETbkR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">銀行</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETdiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETdiR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">保険 他</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETpfR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETpfR001Control&amp;_ActionID=DefaultAID&amp;getFlg=on">ポートフォリオ</a></p>
+</div>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01">取引</p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETstT001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETstT001Control&amp;_SeqNo=1362017614301_ajp_127.0.0.1_8009_87_DefaultPID_DefaultAID&amp;getFlg=on&amp;_ActionID=DefaultAID">国内株式</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETitT003Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETitT003Control&amp;getFlg=on&amp;_ActionID=DefaultAID">投資信託</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=Dbond&amp;sw_param2=01_101&amp;cat1=home&amp;cat2=none&amp;getFlg=on">円貨建債券</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=BondFx&amp;sw_param2=02_301&amp;cat1=home&amp;cat2=none&amp;getFlg=on">外貨建債券</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=Sbond&amp;sw_param2=04_001&amp;cat1=home&amp;cat2=none&amp;getFlg=on">外貨建債券（円貨決済）</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=Fxchange&amp;sw_param2=03_101&amp;cat1=home&amp;cat2=none&amp;getFlg=on">為替取引</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLEThiR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLEThiR001Control&amp;_SeqNo=1361876612147_ajp_127.0.0.1_8009_147_DefaultPID_DefaultAID&amp;getFlg=on&amp;_ActionID=DefaultAID">注文履歴</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETagR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETagR001Control&amp;_SeqNo=1361876612147_ajp_127.0.0.1_8009_147_DefaultPID_DefaultAID&amp;getFlg=on&amp;_ActionID=DefaultAID">当日約定一覧</a></li>
+</ul>
+</div>
+<!--↑-->
+
+</div>
+<!--△04-->
+
+<!--▽05-->
+<div class="footer01M">
+
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01">口座管理</p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETacR001Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETacR001Control&amp;_SeqNo=1362010944573_ajp_127.0.0.1_8009_91_DefaultPID_DefaultAID&amp;getFlg=on&amp;_ActionID=DefaultAID">口座（円建）</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=BondFx&amp;sw_param2=02_201&amp;cat1=home&amp;cat2=none&amp;getFlg=on">口座（外貨建）</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=WNS001&amp;sw_param1=account&amp;sw_param2=accountnisa&amp;cat1=home&amp;cat2=none&amp;getFlg=on">口座（NISA）</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;_PageID=WPLETsmR001Sdtl12&amp;sw_page=WNS001&amp;sw_param1=account&amp;sw_param2=totalreturn&amp;sw_param3=fund&amp;sw_param4=summary&amp;cat1=home&amp;cat2=none&amp;getFlg=on">トータルリターン</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETacR007Control&amp;_PageID=DefaultPID&amp;_DataStoreID=DSWPLETacR007Control&amp;_SeqNo=1362011062758_ajp_127.0.0.1_8009_164_DefaultPID_DefaultAID&amp;getFlg=on&amp;_ActionID=DefaultAID">取引履歴</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=Regist&amp;cat1=home&amp;cat2=none&amp;getFlg=on">登録情報一覧</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=Edeliv&amp;cat1=home&amp;cat2=none&amp;getFlg=on">電子交付書面</a></li>
+</ul>
+</div>
+<!--↑-->
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01">入金・出金・振替</p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=Banking&amp;cat1=home&amp;cat2=none&amp;getFlg=on">入金</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=CashPayment&amp;cat1=home&amp;cat2=none&amp;getFlg=on">出金</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=CashTransfer&amp;cat1=home&amp;cat2=none&amp;getFlg=on">振替</a></li>
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETsmR001Control&amp;_DataStoreID=DSWPLETsmR001Control&amp;sw_page=FcBanking&amp;cat1=home&amp;cat2=none&amp;getFlg=on">外貨入出金</a></li>
+</ul>
+</div>
+<!--↑-->
+
+
+</div>
+<!--△05-->
+
+<!--▽06-->
+<div class="footer01M">
+
+<!--↓-->
+<div class="footer01C">
+<div class="iLink01">
+<p class="fm01">ご利用にあたって</p>
+</div>
+<ul class="liLinkNavy01">
+<li class="fm01"><a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=none&amp;dir=support&amp;file=home_support.html&amp;getFlg=on">お問い合わせ</a></li>
+<li class="fm01"><a href="/ETGate/WPLETmgR001Control?OutSide=on&amp;getFlg=on&amp;burl=search_home&amp;cat1=home&amp;cat2=none&amp;dir=info&amp;file=home_flow.html">お取引までの流れ</a></li>
+
+<li class="fm01"><a href="javascript:void(0);" onClick="openHelp('http://search.sbisec.co.jp/v2/popwin/help/')">ヘルプ</a></li>
+<li class="fm01"><a href="http://faq.sbisec.co.jp" target="_blank">Q&amp;A</a></li>
+</ul>
+</div>
+<!--↑-->
+
+<p class="open"><a href="https://m.sbisec.co.jp/eatiw011" onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><img src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_b_open.gif" alt="今すぐ口座開設" title="今すぐ口座開設" width="151" height="52"></a></p>
+
+<!--ログイン-->
+<form name="form_login2" method="post" action='/ETGate/'>
+
+<INPUT TYPE='hidden' name='_PageID' value='WPLETlgR001Rlgn50'>
+<INPUT TYPE='hidden' name='_DataStoreID' value='DSWPLETlgR001Control'>
+<INPUT TYPE='hidden' name='_ControlID' value='WPLETlgR001Control'>
+<INPUT TYPE='hidden' name='_ActionID' value='login'>
+<INPUT TYPE='hidden' name='getFlg' value='on'>
+
+<p class="login">
+<a onmouseover="revSetOverAction(this);" onmouseout="revSetOutAction(this);"><input type='image' name='form_login2' src="https://a248.e.akamai.net/f/248/29350/7d/pict.sbisec.co.jp/sbisec/images/base02/g_head02_b_login.gif" border="0" alt="ログイン" title="ログイン" width="151" height="42"></a>
+</p>
+
+</form>
+<!--//ログイン-->
+
+</div>
+<!--△06-->
+
+</div>
+</div>
+<!--▲FOOTER01▲-->
+
+ 
+</div>
+      
+      
+      
+
+
+
+
+<!--c、v-->
+
+
+
+
+<!--▼FOOTER02▼-->
+<div id="FOOTER02">
+
+<p class="text">
+<a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=none&amp;dir=support&amp;file=home_support.html&amp;getFlg=on">お問い合わせ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void window.open('https://search.sbisec.co.jp/v2/popwin/attention/trading/info_attention.html','popwin_notes','width=730,height=580,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">投資情報の免責事項</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/ETGate/?OutSide=on&amp;_ControlID=WPLETmgR001Control&amp;_DataStoreID=DSWPLETmgR001Control&amp;burl=search_home&amp;cat1=home&amp;cat2=corporate&amp;dir=corporate%2F&amp;file=home_kaiji.html&amp;getFlg=on">決算公告</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void window.open('https://search.sbisec.co.jp/v2/popwin/info/home/pop6040_torihikihou.html','pop6040_torihikihou','width=730,height=580,status=no,toolbar=no,resizable=yes,scrollbars=yes,left=5,top=5')">金融商品取引法に係る表示</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/ETGate/WPLETmgR001Control?OutSide=on&getFlg=on&burl=search_home&cat1=home&cat2=none&dir=support&file=home_support_backup.html">システム障害の備え</a>
+</p>
+
+<p class="copy">
+金融商品取引業者 株式会社SBI証券 関東財務局長（金商）第44号　加入協会/日本証券業協会、一般社団法人 金融先物取引業協会<br>
+<a href="/ETGate" onClick='location.href="/ETGate/?OutSide=on"; return false;'>SBI証券</a>（旧SBIイー・トレード証券：ネット証券最大手）－オンライントレードで株式・投資信託・債券を－ &copy; SBI SECURITIES Co., Ltd. ALL Rights Reserved.
+</p>
+
+</div>
+<!--▲FOOTER02▲-->
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-7SZV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-7SZV');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- yahoo -->
+<script type="text/javascript">
+  (function () {
+    var tagjs = document.createElement("script");
+    var s = document.getElementsByTagName("script")[0];
+    tagjs.async = true;
+    tagjs.src = "//s.yjtag.jp/tag.js#site=hAyydFq";
+    s.parentNode.insertBefore(tagjs, s);
+  }());
+</script>
+<noscript>
+  <iframe src="//s.thebrighttag.com/iframe?c=hAyydFq" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- //yahoo -->
+
+
+
+
+<script src="/JavaScript/suggest_ext.js#unitid=ja_all" type="text/javascript" charset="UTF-8"></script>
+<!-- ch1pl103 -->
+
+
+
+
+<script language="JavaScript" type="text/javascript">
+if(typeof sc_c7 != "undefined"){
+var sc_c7_list = sc_c7.split(":");
+if(sc_c7_list[0] == "eワラント"){
+sc_c8 = sc_c7.replace("eワラント", "ewarrant");
+}else if(sc_c7_list[0] == "投信"){
+sc_c8 = sc_c7.replace("投信", "fund");
+}else if(sc_c7_list[0] == "ETF" || sc_c7_list[0] == "REIT" || sc_c7_list[0] == "ETN" || sc_c7_list[0] == "VB"){
+sc_c8 = sc_c7.toLowerCase();
+}else if(sc_c7_list[0] == "国内株式"){
+sc_c7 = sc_c7.replace("国内株式", "dstock");
+  
+    if(sc_c7_list[2] == "株価"){
+      sc_c8 = sc_c7.replace("株価", "price");
+    }else if (sc_c7_list[2] == "ニュース"){
+      sc_c8 = sc_c7.replace("ニュース", "news");
+    }else if (sc_c7_list[2] == "チャート"){
+      sc_c8 = sc_c7.replace("チャート", "chart");
+    }else if (sc_c7_list[2] == "評価レポート"){
+      sc_c8 = sc_c7.replace("評価レポート", "isreport");
+    }else if (sc_c7_list[2] == "四季報"){
+      sc_c8 = sc_c7.replace("四季報", "qjournal");
+    }else if (sc_c7_list[2] == "業績"){
+      sc_c8 = sc_c7.replace("業績", "results");
+    }else if (sc_c7_list[2] == "株主優待"){
+      sc_c8 = sc_c7.replace("株主優待", "hldr_incentives");
+    }else if (sc_c7_list[2] == "コーポレートアクション"){
+      sc_c8 = sc_c7.replace("コーポレートアクション", "corpaction");
+    }
+  
+}
+sc_c7 = "";
+}
+sc_pageName = "main:WPLETfiR001Idtl11";
+sc_channel = "main:fund";
+sc_c2 = "";
+sc_c4 = "visitor";
+sc_events = "";
+sc_products = "";
+//SiteCatalyst埋め込み新規タグ
+sc_v16 = "";
+sc_v17 = "";
+sc_v19 = "";
+sc_v21 = "";
+sc_c30 = "";
+sc_c31 = "";
+sc_c33 = "";
+sc_c38 = "";
+sc_c39 = "";
+sc_c28 = "";
+</script>
+<script language="JavaScript" type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+      <!--▲footer-->
+
+      
+      <!-- recommender tag -->
+      <script type="text/javascript" language="javascript">
+      <!--
+      document.write("<img src='" + location.protocol + "//re.veritrans.co.jp/bcon/basic/?id[]=122314144' width='1' height='1'>");
+      // -->
+      </script>
+      <!-- /recommender tag -->
+      
+
+</body>
+</html>
+<!--END-->
+
+
+
+
+
+
+
+
+
+
